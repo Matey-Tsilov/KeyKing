@@ -9,13 +9,6 @@ export const Nav = () => {
 
                 <a href="index.html" className="navbar-brand mx-auto mx-lg-0">First</a>
 
-                <div className="d-flex align-items-center d-lg-none">
-                    <i className="navbar-icon bi-telephone-plus me-3"></i>
-                    <a className="custom-btn btn" href="#section_5">
-                        120-240-9600
-                    </a>
-                </div>
-
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-lg-5">
                         <li className="nav-item">
@@ -40,9 +33,9 @@ export const Nav = () => {
                     </ul>
 
                     <div className="d-lg-flex align-items-center d-none ms-auto">
-                        <i className="navbar-icon bi-telephone-plus me-3"></i>
+                        <i className="navbar-icon bi-envelope-plus me-3"></i>
                         <a className="custom-btn btn" href="#section_5">
-                            120-240-9600
+                            clearred@gmail.com
                         </a>
                     </div>
                 </div>
