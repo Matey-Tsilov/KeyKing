@@ -19,9 +19,9 @@ export const AboutSection = () => {
 
                     <h3 className="pt-2 mb-3">a little bit about Joshua</h3>
 
-                    <p>This one-page HTML portfolio is provided by <a href="https://templatemo.com" target="_blank">TemplateMo</a>. This layout is based on Bootstrap v5.1.3 CSS and JS libraries. Image credits go to <a href="https://unsplash.com" target="_blank">Unsplash</a> and <a href="https://freepik.com" target="_blank">FreePik</a> for images used in this page.</p>
+                    <p>This one-page HTML portfolio is provided by <a href="https://templatemo.com" target="_blank" rel="noreferrer">TemplateMo</a>. This layout is based on Bootstrap v5.1.3 CSS and JS libraries. Image credits go to <a href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a> and <a href="https://freepik.com" target="_blank" rel="noreferrer">FreePik</a> for images used in this page.</p>
 
-                    <p>You are allowed to use this template for your websites. You are not allowed to redistribute the template ZIP file on any other website. Please <a href="https://templatemo.com/contact" target="_blank">contact us</a> for more info.</p>
+                    <p>You are allowed to use this template for your websites. You are not allowed to redistribute the template ZIP file on any other website. Please <a href="https://templatemo.com/contact" target="_blank" rel="noreferrer">contact us</a> for more info.</p>
                 </div>
             </div>
 
