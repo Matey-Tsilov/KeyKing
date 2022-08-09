@@ -73,7 +73,7 @@ export const ContactSection = () => {
                             </div>
 
                             <div className="col-lg-6 col-12 mt-5 mt-lg-0">
-                                <form action="/" method="get" className="custom-form contact-form" role="form">
+                                <form action="/" method="get" className="custom-form contact-form">
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-12">
                                             <div className="form-floating">
