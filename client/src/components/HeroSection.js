@@ -13,7 +13,10 @@ export const HeroSection = () => {
                                 </div>
 
                                 <h2 className="mb-4">I’m available for freelance work.</h2>
-                                <p className="mb-4"><a className="custom-btn btn custom-link" href="#section_2">Let's begin</a></p>
+                                <p className="mb-4 login"><a className="custom-btn btn custom-link" href="#section_2">Login</a></p>
+                                <p className="space">&nbsp;&nbsp;&nbsp;</p>
+                                <p className="mb-4 register"><a className="custom-btn btn custom-link" href="#section_2">Register</a></p>
+
                             </div>
                         </div>
 
