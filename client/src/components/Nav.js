@@ -7,7 +7,7 @@ export const Nav = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <a href="index.html" className="navbar-brand mx-auto mx-lg-0">First</a>
+                <a href="index.html" className="navbar-brand mx-auto mx-lg-0">KeyKing</a>
 
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-lg-5">
@@ -33,10 +33,7 @@ export const Nav = () => {
                     </ul>
 
                     <div className="d-lg-flex align-items-center d-none ms-auto">
-                        <i className="navbar-icon bi-envelope-plus me-3"></i>
-                        <a className="custom-btn btn" href="#section_5">
-                            clearred@gmail.com
-                        </a>
+                        <a className="navbar-icon me-3 bi-envelope-fill" href="/"> </a>
                     </div>
                 </div>
 

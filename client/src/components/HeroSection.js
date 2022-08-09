@@ -9,13 +9,15 @@ export const HeroSection = () => {
                                 <div className="hero-title-wrap d-flex align-items-center mb-4">
                                     <img src="images/happy-bearded-young-man.jpg" className="avatar-image avatar-image-large img-fluid" alt="" />
 
-                                    <h1 className="hero-title ms-3 mb-0">Hello friend!</h1>
+                                    <h1 className="hero-title ms-3 mb-0">Welcome!</h1>
                                 </div>
 
-                                <h2 className="mb-4">I’m available for freelance work.</h2>
+                                <h2 className="mb-4">Dive into the world of keyboards</h2>
                                 <p className="mb-4 login"><a className="custom-btn btn custom-link" href="#section_2">Login</a></p>
                                 <p className="space">&nbsp;&nbsp;&nbsp;</p>
                                 <p className="mb-4 register"><a className="custom-btn btn custom-link" href="#section_2">Register</a></p>
+                                <p className="space">&nbsp;&nbsp;&nbsp;</p>
+                                <p className="mb-4 guest"><a className="custom-btn btn custom-link" href="#section_2">Guest</a></p>
 
                             </div>
                         </div>

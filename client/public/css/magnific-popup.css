@@ -18,8 +18,8 @@
   height: 100%;
   z-index: 9999;
   position: fixed;
-  outline: none !important;
-  -webkit-backface-visibility: hidden; }
+  outline: none !important;}
+  /* -webkit-backface-visibility: hidden; } */
 
 .mfp-container {
   text-align: center;

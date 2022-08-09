@@ -34,13 +34,13 @@ export const ContactSection = () => {
 
                                     <ul className="social-icon">
 
-                                        <li className="social-icon-item"><a href="https://twitter.com/minthu" className="social-icon-link bi-twitter"></a></li>
+                                        <li className="social-icon-item"><a href="https://twitter.com/minthu" className="social-icon-link bi-twitter"> </a></li>
 
-                                        <li className="social-icon-item"><a href="/" className="social-icon-link bi-instagram"></a></li>
+                                        <li className="social-icon-item"><a href="/" className="social-icon-link bi-instagram"> </a></li>
 
-                                        <li className="social-icon-item"><a href="/" className="social-icon-link bi-pinterest"></a></li>
+                                        <li className="social-icon-item"><a href="/" className="social-icon-link bi-pinterest"> </a></li>
 
-                                        <li className="social-icon-item"><a href="https://www.youtube.com/templatemo" className="social-icon-link bi-youtube"></a></li>
+                                        <li className="social-icon-item"><a href="https://www.youtube.com/templatemo" className="social-icon-link bi-youtube"> </a></li>
                                     </ul>
 
                                     <strong className="site-footer-title d-block mt-4 mb-3">Start a project</strong>
