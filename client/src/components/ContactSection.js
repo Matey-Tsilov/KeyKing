@@ -19,13 +19,13 @@ export const ContactSection = () => {
                                     <strong className="site-footer-title d-block mb-3">Services</strong>
 
                                     <ul className="footer-menu">
-                                        <li className="footer-menu-item"><a href="#" className="footer-menu-link">Websites</a></li>
+                                        <li className="footer-menu-item"><a href="/" className="footer-menu-link">Websites</a></li>
 
-                                        <li className="footer-menu-item"><a href="#" className="footer-menu-link">Branding</a></li>
+                                        <li className="footer-menu-item"><a href="/" className="footer-menu-link">Branding</a></li>
 
-                                        <li className="footer-menu-item"><a href="#" className="footer-menu-link">Ecommerce</a></li>
+                                        <li className="footer-menu-item"><a href="/" className="footer-menu-link">Ecommerce</a></li>
 
-                                        <li className="footer-menu-item"><a href="#" className="footer-menu-link">SEO</a></li>
+                                        <li className="footer-menu-item"><a href="/" className="footer-menu-link">SEO</a></li>
                                     </ul>
 
                                     <strong className="site-footer-title d-block mt-4 mb-3">Stay connected</strong>
@@ -33,9 +33,9 @@ export const ContactSection = () => {
                                     <ul className="social-icon">
                                         <li className="social-icon-item"><a href="https://twitter.com/minthu" className="social-icon-link bi-twitter"></a></li>
 
-                                        <li className="social-icon-item"><a href="#" className="social-icon-link bi-instagram"></a></li>
+                                        <li className="social-icon-item"><a href="/" className="social-icon-link bi-instagram"></a></li>
 
-                                        <li className="social-icon-item"><a href="#" className="social-icon-link bi-pinterest"></a></li>
+                                        <li className="social-icon-item"><a href="/" className="social-icon-link bi-pinterest"></a></li>
 
                                         <li className="social-icon-item"><a href="https://www.youtube.com/templatemo" className="social-icon-link bi-youtube"></a></li>
                                     </ul>
@@ -73,7 +73,7 @@ export const ContactSection = () => {
                             </div>
 
                             <div className="col-lg-6 col-12 mt-5 mt-lg-0">
-                                <form action="#" method="get" className="custom-form contact-form" role="form">
+                                <form action="/" method="get" className="custom-form contact-form" role="form">
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-12">
                                             <div className="form-floating">
