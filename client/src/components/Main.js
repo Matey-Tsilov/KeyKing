@@ -11,17 +11,17 @@ export const Main = () => {
     <main>
       <HeroSection />
 
-      <AboutSection />
+      {/* <AboutSection /> */}
 
-      <FeaturedSection />
+      {/* <FeaturedSection /> */}
 
-      <ClientsSection />
+      {/* <ClientsSection /> */}
 
-      <ServiceSection />
+      {/* <ServiceSection /> */}
 
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
 
-      <ContactSection />
+      {/* <ContactSection /> */}
     </main>
   );
 };

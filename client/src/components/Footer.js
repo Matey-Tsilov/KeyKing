@@ -7,9 +7,7 @@ export const Footer = () => {
             <div className="col-lg-12 col-12">
                 <div className="copyright-text-wrap">
                     <p className="mb-0">
-                        <span className="copyright-text">Copyright © 2036 <a href="/">First Portfolio</a> Company. All rights reserved.</span>
-                        Design: 
-                        <a rel="sponsored" href="https://templatemo.com" target="noreferrer">TemplateMo</a>
+                        <span className="copyright-text">All rights reserved &copy;</span>
                     </p>
                 </div>
             </div>
