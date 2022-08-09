@@ -27,7 +27,7 @@ export const Nav = () => {
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link click-scroll" href="#section_3">Services</a>
+                            <a className="nav-link click-scroll" href="#section_3">Quests</a>
                         </li>
 
                         <li className="nav-item">

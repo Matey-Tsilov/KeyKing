@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 export const ContactSection = () => {
    return (
     <section className="contact section-padding" id="section_5">
@@ -42,7 +44,7 @@ export const ContactSection = () => {
 
                                     <strong className="site-footer-title d-block mt-4 mb-3">Start a project</strong>
 
-                                    <p className="mb-0">I’m available for freelance projects</p>
+                                    <p className="mb-0">I'm available for freelance projects</p>
                                 </div>
                             </div>
 

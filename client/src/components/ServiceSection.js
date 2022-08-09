@@ -25,7 +25,7 @@ export const ServiceSection = () => {
 
                             <p>You may want to explore Too CSS for great collection of free HTML CSS templates.</p>
 
-                            <a href="#" className="custom-btn custom-border-btn btn mt-3">Discover More</a>
+                            <a href="/" className="custom-btn custom-border-btn btn mt-3">Discover More</a>
 
                             <div className="services-icon-wrap d-flex justify-content-center align-items-center">
                                 <i className="services-icon bi-globe"></i>
@@ -46,7 +46,7 @@ export const ServiceSection = () => {
 
                             <p>You can explore more CSS templates on TemplateMo website by browsing through different tags.</p>
 
-                            <a href="#" className="custom-btn custom-border-btn btn mt-3">Discover More</a>
+                            <a href="/" className="custom-btn custom-border-btn btn mt-3">Discover More</a>
 
                             <div className="services-icon-wrap d-flex justify-content-center align-items-center">
                                 <i className="services-icon bi-lightbulb"></i>
@@ -67,7 +67,7 @@ export const ServiceSection = () => {
 
                             <p>If you need a customized ecommerce website for your business, feel free to discuss with me.</p>
 
-                            <a href="#" className="custom-btn custom-border-btn btn mt-3">Discover More</a>
+                            <a href="/" className="custom-btn custom-border-btn btn mt-3">Discover More</a>
 
                             <div className="services-icon-wrap d-flex justify-content-center align-items-center">
                                 <i className="services-icon bi-phone"></i>
@@ -88,7 +88,7 @@ export const ServiceSection = () => {
 
                             <p>To list your website first on any search engine, we will work together. First Portfolio is one-page CSS Template for free download.</p>
 
-                            <a href="#" className="custom-btn custom-border-btn btn mt-3">Discover More</a>
+                            <a href="/" className="custom-btn custom-border-btn btn mt-3">Discover More</a>
 
                             <div className="services-icon-wrap d-flex justify-content-center align-items-center">
                                 <i className="services-icon bi-google"></i>
