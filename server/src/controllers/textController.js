@@ -1,6 +1,6 @@
 const { isAuth, isOwner } = require('../middlewares/guards');
 const preload = require('../middlewares/preload');
-const api = require('../services/furnitureService');
+const api = require('../services/textService');
 const errorMapper = require('../util/errorMapper');
 
 const router = require('express').Router()
@@ -15,13 +15,10 @@ try {
 router.post('/catalog', isAuth(), async (req, res) => {
 
     const item = {
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        description: req.body.description,
-        price: req.body.price,
-        img: req.body.img,
-        material: req.body.material,
+        language: req.body.language,
+        time: req.body.time,
+        content: req.body.content,
+        loot: req.body.loot,
         _ownerId: req.user._id
       }
 
@@ -40,13 +37,10 @@ router.get('/catalog/:id', preload(api), (req, res) => {
 
 router.put('/catalog/:id', preload(api), isOwner(), async (req, res) => {
     const changedItem = {
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        description: req.body.description,
-        price: req.body.price,
-        img: req.body.img,
-        material: req.body.material
+        time: req.body.time,
+        language: req.body.language,
+        content: req.body.content,
+        loot: req.body.loot,
     }
 
     try {

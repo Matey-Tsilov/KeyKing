@@ -1,8 +1,8 @@
 const router = require('express').Router()
-const furnitureController = require('./controllers/furnitureController')
+const textController = require('./controllers/textController')
 const userController = require('./controllers/userController')
 
-router.use('/data', furnitureController)
+router.use('/data', textController)
 router.use('/users', userController)
 
 module.exports = router

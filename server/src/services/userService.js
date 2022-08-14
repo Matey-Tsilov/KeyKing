@@ -65,7 +65,7 @@ function createSessionInClient(userObj) {
 
 function validateToken(token) {
     if (blackList.has(token)) {
-        console.log(blackList);
+
         throw new Error('Token is blacklisted!')
     }
     return jwt.verify(token, JWT_SECRET)
