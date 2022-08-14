@@ -16,20 +16,21 @@ export const Nav = () => {
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link click-scroll" href="#section_2">About</a>
-                        </li>
-
-                        <li className="nav-item">
                             <a className="nav-link click-scroll" href="#section_3">Quests</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link click-scroll" href="#section_4">Projects</a>
+                            <a className="nav-link click-scroll" href="#section_3">Ranking</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link click-scroll" href="#section_5">Contact</a>
+                            <a className="nav-link click-scroll" href="#section_3">SpeedTest</a>
                         </li>
+                        {/* Ако сме влезнали в профила си */}
+                        <li className="nav-item">
+                            <a className="nav-link click-scroll" href="#section_4">My Profile</a>
+                        </li>
+                        
                     </ul>
 
                     <div className="d-lg-flex align-items-center d-none ms-auto">
