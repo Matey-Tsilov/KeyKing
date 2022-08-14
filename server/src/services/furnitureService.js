@@ -1,56 +1,50 @@
-const Item = require("../models/Item");
+const Text = require("../models/Text");
 
 async function getAll(query) {
 if (query) {
     const userId = query.split('=')[1].slice(1, -1)
-    return Item.find({_ownerId: userId})
+    return Text.find({_ownerId: userId})
     
 }else {
-    return Item.find({})
+    return Text.find({})
 
 }
 }
-async function createItem(data) {
-    const item = new Item({
-        make: data.make,
-        model: data.model,
-        year: data.year,
-        description: data.description,
-        price: data.price,
-        img: data.img,
-        material: data.material,
+async function createText(data) {
+    const Text = new Text({
+        language: data.language,
+        time: data.time,
+        content: data.content,
+        loot: data.loot,
         _ownerId: data._ownerId
       })
 
-      await item.save()
+      await Text.save()
 
-      return item
+      return Text
 }
 async function getById(id) {
-    return Item.findById(id)
+    return Text.findById(id)
 }
-async function updateItem(id, upItem) {
+async function updateText(id, upText) {
 
-    const updatedItem = await Item.findByIdAndUpdate(id, {
-        make: upItem.make,
-        model: upItem.model,
-        year: upItem.year,
-        description: upItem.description,
-        price: upItem.price,
-        img: upItem.img,
-        material: upItem.material
+    const updatedText = await Text.findByIdAndUpdate(id, {
+        language: upText.language,
+        time: upText.time,
+        content: upText.content,
+        loot: upText.loot,
     })
 
-    return updatedItem
+    return updatedText
 }
-async function deleteItem(id) {
-    return await Item.findByIdAndDelete(id)
+async function deleteText(id) {
+    return await Text.findByIdAndDelete(id)
 }
 
 module.exports = {
     getAll,
-    createItem,
+    createText,
     getById,
-    updateItem,
-    deleteItem
+    updateText,
+    deleteText
 }
