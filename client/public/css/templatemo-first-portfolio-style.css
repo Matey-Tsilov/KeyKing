@@ -1202,3 +1202,8 @@ strong {
   border-color: transparent;
   color: var(--secondary-color);
 }
+
+.keyboard {
+height: 367px;
+width: 550px;
+}

@@ -12,7 +12,7 @@ export const HeroSection = () => {
                                     <h1 className="hero-title ms-3 mb-0">Welcome!</h1>
                                 </div>
 
-                                <h2 className="mb-4">Dive into the world of keyboards</h2>
+                                <h2 className="mb-4">Dive into the world of fast-typing &#128513;</h2>
                                 <p className="mb-4 login"><a className="custom-btn btn custom-link" href="#section_2">Login</a></p>
                                 <p className="space">&nbsp;&nbsp;&nbsp;</p>
                                 <p className="mb-4 register"><a className="custom-btn btn custom-link" href="#section_2">Register</a></p>
@@ -24,7 +24,7 @@ export const HeroSection = () => {
 
                         <div className="col-lg-5 col-12 position-relative">
                             <div className="hero-image-wrap"></div>
-                            <img src="images/portrait-happy-excited-man-holding-laptop-computer.png" className="hero-image img-fluid" alt="" />
+                            <img src="images/logoB.png" className="hero-image img-fluid keyboard" alt="" />
                         </div>
 
                     </div>
