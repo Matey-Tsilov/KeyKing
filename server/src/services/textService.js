@@ -37,7 +37,8 @@ async function updateText(id, upText) {
         loot: upText.loot,
     })
 
-    return updatedText
+    const result = updatedText
+    return result
 }
 async function deleteText(id) {
     return await Text.findByIdAndDelete(id)

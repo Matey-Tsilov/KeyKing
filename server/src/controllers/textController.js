@@ -37,7 +37,7 @@ router.get('/catalog/:id', preload(api), (req, res) => {
 })
 
 router.put('/catalog/:id', preload(api), isOwner(), async (req, res) => {
-    const changedItem = {
+    let changedItem = {
         title: req.body.title,
         time: req.body.time,
         language: req.body.language,
@@ -47,7 +47,10 @@ router.put('/catalog/:id', preload(api), isOwner(), async (req, res) => {
 
     try {
         const result = await api.updateText(res.locals.item._id, changedItem)
-        res.json(result)
+
+       changedItem._id = result._id
+       changedItem._ownerId = result._ownerId
+        res.json(changedItem)
     } catch (error) { 
         console.error(error)
         res.status(400).json({message: `request Error!`})

@@ -1,6 +1,6 @@
 module.exports = (api) => async (req, res, next) => {
     const id = req.params.id
-console.log(req.user);
+
     const item = await api.getById(id)
 
     if (item) {

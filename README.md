@@ -127,23 +127,17 @@ Content:
 
 ## Update Text by id
 
-Update an existing Text by sending a `PUT` request to `/data/catalog/{textId}` with properties `language`, `loot`, `content`, `time`, `title` and `address`. The service will respond with an object, containing newly updated user.
+Update an existing Text by sending a `PUT` request to `/data/catalog/{textId}` with properties `language`, `loot`, `content`, `time` and `title`. The service will respond with an object, containing newly updated Text.
 
 ### Body
 
 ```
 {
-  firstName: string;
-  lastName: string;
-  email: string;
-  imageUrl: string;
-  phoneNumber: string;
-  address: {
-    country: string,
-    city: string;
-    street: string;
-    streetNumber: number;
-  }
+    title: string,
+    time: number,
+    language: string,
+    content: string,
+    loot: number,
 }
 ```
 
@@ -155,22 +149,19 @@ Content:
 
 ```
 {
-  user: {
-    _id: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    imageUrl: string;
-    phoneNumber: string;
-    createdAt: string;
-    updatedAt: string;
-  }
+    title: string,
+    time: number,
+    language: string,
+    content: string,
+    loot: number,
+    _id: string,
+    _ownerId: string
 }
 ```
 
-## Delete user by userId
+## Delete Text by id
 
-Delete an existing user by sending a `DELETE` request to `/users/{userId}`. The service will respond with an object, containing userId of the deleted user.
+Delete an existing user by sending a `DELETE` request to `/data/catalog/{textId}`. The service will respond with an object, containing full information regarding deleted Text record.
 
 ### Success Response:
 
@@ -180,7 +171,14 @@ Content:
 
 ```
 {
-  userId: string;
+    _id: string,
+    time: number,
+    language: string,
+    content: string,
+    loot: number,
+    _ownerId: string,
+    __v: number,
+    title: string
 }
 ```
 
@@ -195,5 +193,7 @@ Content:
 ```
 
 ## Further Information
-You may create issues, regarding missing, incorrect or incomplete information. Any contribution is welcome!
+You may create issues, regarding missing, incorrect or incomplete information Conect with me on my email: 
+# mateytsilov@gmail.com
+Any contribution is welcome!
 
