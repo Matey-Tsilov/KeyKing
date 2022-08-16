@@ -15,6 +15,7 @@ try {
 router.post('/catalog', isAuth(), async (req, res) => {
 
     const item = {
+        title: req.body.title,
         language: req.body.language,
         time: req.body.time,
         content: req.body.content,
@@ -23,7 +24,7 @@ router.post('/catalog', isAuth(), async (req, res) => {
       }
 
       try {
-        const result = await api.createItem(item)
+        const result = await api.createText(item)
         res.json(result)
     } catch (error) {
         const message = errorMapper(error)
@@ -37,6 +38,7 @@ router.get('/catalog/:id', preload(api), (req, res) => {
 
 router.put('/catalog/:id', preload(api), isOwner(), async (req, res) => {
     const changedItem = {
+        title: req.body.title,
         time: req.body.time,
         language: req.body.language,
         content: req.body.content,
@@ -44,7 +46,7 @@ router.put('/catalog/:id', preload(api), isOwner(), async (req, res) => {
     }
 
     try {
-        const result = await api.updateItem(res.locals.item._id, changedItem)
+        const result = await api.updateText(res.locals.item._id, changedItem)
         res.json(result)
     } catch (error) { 
         console.error(error)
@@ -55,7 +57,7 @@ router.put('/catalog/:id', preload(api), isOwner(), async (req, res) => {
 
 //като подаваме така api-то => dependecy injection!, защото не го require-ваме в preload модула!
 router.delete('/catalog/:id', preload(api), isOwner(), async (req, res) => {
-    const result = await api.deleteItem(req.params.id)
+    const result = await api.deleteText(req.params.id)
     res.json(result)
 })
 

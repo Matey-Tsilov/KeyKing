@@ -12,6 +12,7 @@ if (query) {
 }
 async function createText(data) {
     const Text = new Text({
+        title: data.title,
         language: data.language,
         time: data.time,
         content: data.content,
@@ -29,6 +30,7 @@ async function getById(id) {
 async function updateText(id, upText) {
 
     const updatedText = await Text.findByIdAndUpdate(id, {
+        title: upText.title,
         language: upText.language,
         time: upText.time,
         content: upText.content,
