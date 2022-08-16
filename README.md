@@ -40,6 +40,12 @@ To start the server, you must run the following command in your terminal:
 > npm start
 ```
 
+To start the client, you must run the following command in your terminal:
+
+```
+> npm start
+```
+
 ## Base URL
 
 The Base URL for the API is: `http://localhost:3030`
