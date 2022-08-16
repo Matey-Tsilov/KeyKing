@@ -1,6 +1,7 @@
 const {model, Schema, Types: {ObjectId}} = require('mongoose')
 
 const textSchema = new Schema({
+    title: {type: String},
     time: {type: Number},
     language: {type: String},
     content: {type: String},
