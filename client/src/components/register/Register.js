@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 const Register = () => {
   return (
     <div className="form-fragment">
@@ -61,6 +64,7 @@ const Register = () => {
             Done
           </button>
         </div>
+        <div className="middle"><Link className="link" to={'/login'}><strong>Already have an account?</strong></Link></div>
       </form>
 </div>
   );
