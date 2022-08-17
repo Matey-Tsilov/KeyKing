@@ -65,7 +65,7 @@ The documentation below assumes you are pre-pending the Base URL to the endpoint
 
 GET request to `/users`
 
-Server will return object with all of the users
+Server will return an array with all of the user objects
 
 ## Create a new user [register & login]
 
