@@ -1,24 +1,38 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import * as api from '../../services/userService.js'
+import { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import * as api from '../../api/api.js'
 
 const Register = () => {
+
+  const passRef = useRef()
+  const rePassRef = useRef()
+
+  const navigate = useNavigate()
+
   const [values, setValues] = useState({
     email: "",
     password: "",
     rePass: "",
+    checkbox: false
   });
 
   const onInputChange = (e) => {        
-       setValues(v => { return {...v, [e.target.name]: e.target.value }})
+       
+       if (e.target.name === 'checkbox') {
+          const type = (e.target.checked) ? 'text' : 'password' 
+          passRef.current.type = type
+          rePassRef.current.type = type
+       }
+       
+       setValues(v => { return {...v, [e.target.name]: e.target.value || e.target.checked }})
   };
 
   const onFormSubmit = async (e) => {
         e.preventDefault()
 
         if (values.password === values.rePass) {
-            const createdUserInfo = await api.register({email: values.email, password: values.password})
-            
+            const createdUserInfo = await api.register(values.email,values.password)
+            navigate('/')
         }else {
             throw {message: "Passwords don't match!"}
         }  
@@ -55,6 +69,7 @@ const Register = () => {
               placeholder="Password"
               value={values.password}
               onChange={onInputChange}
+              ref={passRef}
             />
 
             <label htmlFor="floatingInput">Password:</label>
@@ -71,6 +86,7 @@ const Register = () => {
               placeholder="Repeat password"
               value={values.rePass}
               onChange={onInputChange}
+              ref={rePassRef}
             />
 
             <label htmlFor="floatingInput">Repeat password:</label>
@@ -80,7 +96,7 @@ const Register = () => {
         <div className="col-lg-6 center checkbox">
           <label htmlFor="checkbox">Compare passwords: </label>
           <p className="space">&nbsp;&nbsp;&nbsp;</p>
-          <input type="checkbox" name="checkbox" id="checkbox" />
+          <input type="checkbox" name="checkbox" id="checkbox" onClick={onInputChange}/>
         </div>
 
         <div className="col-lg-3 col-12 ms-auto center">

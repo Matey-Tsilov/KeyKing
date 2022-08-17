@@ -1,50 +1,19 @@
+import * as api from '../api/api.js'
+import { clearUserData } from '../api/util.js'
 const url = 'http://localhost:3030/users'
 
+
 const getAllUsers = async () => {
-      try {
-        const res = await fetch(url)
-        const users = await res.json()
+try {
+    const users = await api.get(url)
+    return users
 
-        return users
-
-      } catch (error) {
+} catch (error) {
         console.error(error)
-      }
+}
       
 }
 
-const register = async ({email, password}) => {
-try {
-    const res = await fetch(url, {method: 'POST', headers:{}, body: {email, password}})
-    //email, _id, accessToken
-    const userInfo = await res.json()
-
-    return userInfo
-
-} catch (error) {
-    console.error(error)
-}
-}
-
-const login = async ({email, password}) => {
-    try {
-        const res = await fetch(url, {method: 'POST', headers:{}, body: {email, password}})
-        //email, _id, accessToken
-        const userInfo = await res.json()
-
-        return userInfo
-    
-    } catch (error) {
-        console.error(error)
-    }
-}
-
-const logout = async () => {
-
-}
 export {
-    getAllUsers,
-    register,
-    login,
-    logout
+    getAllUsers
 }

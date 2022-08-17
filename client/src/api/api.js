@@ -26,7 +26,6 @@ async function request(url, options) {
 
     } catch (err) {
         alert(err.message)
-        //notify(err.message)
         throw err
     }
     
@@ -65,48 +64,48 @@ async function del(url) {
     return request(url, createOptions('delete'))
 }
 
-// async function login(email, password) {
+async function login(email, password) {
 
-//     const serverRes = await post('/users/login', {email, password})
+    const serverRes = await post('/users/login', {email, password})
     
-//     const userData = {
-//         email: serverRes.email, 
-//         password: serverRes.password,
-//         token: serverRes.accessToken,
-//         id: serverRes._id,
-//         hasLiked: false
-//     }
+    const userData = {
+        email: serverRes.email, 
+        password: serverRes.password,
+        token: serverRes.accessToken,
+        id: serverRes._id,
+    }
     
-//     //така ще можем по-лесно да взимаме колко миима е написал, за да визуализираме бройката в userProfile view
-//     //работи само при стари версии на сървъра!//await get(`/data/memes?where=_ownerId%3D%22${userData.id}%22&count`)
-//     setUserData(userData)
 
-// }
+    setUserData(userData)
 
-// async function register(username, email, password, gender) {
+}
 
-//     const serverRes = await post('/users/register', {username, email, password, gender})
+async function register(email, password) {
+
+    const serverRes = await post('/users/register', {email, password})
     
-//     const userData = {
-//         email: serverRes.email, 
-//         password: serverRes.password,
-//         token: serverRes.accessToken,
-//         id: serverRes._id,
-//         hasLiked: false
-//     }
-//     //така ще можем по-лесно да взимаме колко миима е написал, за да визуализираме бройката в userProfile view
-//     setUserData(userData)
+    const userData = {
+        email: serverRes.email, 
+        password: serverRes.password,
+        token: serverRes.accessToken,
+        id: serverRes._id
+    }
 
-// }
+    setUserData(userData)
 
-// async function logout() {
-//     await get('/users/logout')
-//     clearUserData()
-// }
+}
+
+async function logout() {
+    await get('/users/logout')
+    clearUserData()
+}
 
 export {
     get,
     post,
     put,
-    del
+    del,
+    login, 
+    register, 
+    logout
 }
