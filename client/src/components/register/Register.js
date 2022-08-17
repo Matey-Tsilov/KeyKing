@@ -16,7 +16,7 @@ const Register = () => {
               required=""
               />
 
-            <label htmlFor="floatingInput">Email address</label>
+            <label htmlFor="floatingInput">Email address:</label>
           </div>
         </div>
 
@@ -31,8 +31,29 @@ const Register = () => {
               required=""
               />
 
-            <label htmlFor="floatingInput">Password</label>
+            <label htmlFor="floatingInput">Password:</label>
           </div>
+        </div>
+
+        <div className="col-lg-6 col-md-6 col-12 center">
+          <div className="form-floating">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              className="form-control"
+              placeholder="Password"
+              required=""
+              />
+
+            <label htmlFor="floatingInput">Repeat password:</label>
+          </div>
+        </div>
+
+        <div className="col-lg-6 center checkbox" >
+            <label htmlFor="checkbox">Compare passwords: </label>
+            <p className="space">&nbsp;&nbsp;&nbsp;</p>
+            <input type="checkbox" name="checkbox" id="checkbox" />
         </div>
 
         <div className="col-lg-3 col-12 ms-auto center">
