@@ -7,17 +7,18 @@ export const HeroSection = () => {
                         <div className="col-lg-7 col-12">
                             <div className="hero-text">
                                 <div className="hero-title-wrap d-flex align-items-center mb-4">
-                                    <img src="images/happy-bearded-young-man.jpg" className="avatar-image avatar-image-large img-fluid" alt="" />
 
                                     <h1 className="hero-title ms-3 mb-0">Welcome!</h1>
                                 </div>
 
-                                <h2 className="mb-4">Dive into the world of fast-typing &#128513;</h2>
+                                <h2 className="mb-4">Do you want to type fast?</h2>
+                                <div>
                                 <p className="mb-4 login"><a className="custom-btn btn custom-link" href="#section_2">Login</a></p>
                                 <p className="space">&nbsp;&nbsp;&nbsp;</p>
                                 <p className="mb-4 register"><a className="custom-btn btn custom-link" href="#section_2">Register</a></p>
                                 <p className="space">&nbsp;&nbsp;&nbsp;</p>
                                 <p className="mb-4 guest"><a className="custom-btn btn custom-link" href="#section_2">Guest</a></p>
+                                </div>
 
                             </div>
                         </div>

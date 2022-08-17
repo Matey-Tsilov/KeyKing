@@ -523,7 +523,7 @@ strong {
   z-index: 22;
   top: 0;
   width: 100%;
-  min-width: 550px;
+  min-width: 620px;
 }
 
 .hero svg {
@@ -995,7 +995,7 @@ strong {
   }
 
   .hero-image {
-    min-width: 650px;
+    min-width: 645px;
   }
   
   .hero-title,
@@ -1204,6 +1204,6 @@ strong {
 }
 
 .keyboard {
-height: 367px;
-width: 550px;
+height: 645px;
+width: 645px;
 }

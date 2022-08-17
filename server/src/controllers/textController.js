@@ -51,7 +51,7 @@ router.put('/catalog/:id', preload(api), isOwner(), async (req, res) => {
        changedItem._id = result._id
        changedItem._ownerId = result._ownerId
         res.json(changedItem)
-    } catch (error) { 
+    } catch (error) {   
         console.error(error)
         res.status(400).json({message: `request Error!`})
         
