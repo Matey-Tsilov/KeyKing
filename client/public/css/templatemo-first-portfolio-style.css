@@ -1211,3 +1211,8 @@ width: 645px;
 .center {
 margin: auto;
 }
+
+.message {
+  height: 25%;
+  width: 30%;
+}
