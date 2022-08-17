@@ -31,4 +31,9 @@ router.get('/logout', (req, res) => {
     res.status(204).end()
 })
 
+router.get('/', async (req, res) => {
+    const users = await api.getAllUsers()
+    res.json(users)
+})
+
 module.exports = router

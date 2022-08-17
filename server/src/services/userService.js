@@ -5,6 +5,11 @@ const jwt = require('jsonwebtoken')
 const JWT_SECRET = 'ydreyhyji7tieopdseb2ooe;km2p;3i480dw2`1'
 const blackList = new Set()
 
+function getAllUsers() {
+    const users = User.find({})
+    return users
+}
+
 async function register(email, password) {
     //check if email is taken
     const existing = await User.findOne({email})
@@ -23,6 +28,7 @@ async function register(email, password) {
     //return result
     return createSessionInClient(user)
 }
+
 async function login(email, password) {
     //check if user exists
     const existing = await User.findOne({email})
@@ -41,6 +47,7 @@ async function login(email, password) {
     //return result
     return createSessionInClient(existing)
 }
+
 function logout(token) {
     blackList.add(token)
 }
@@ -71,9 +78,11 @@ function validateToken(token) {
     return jwt.verify(token, JWT_SECRET)
 }
 
+
 module.exports = {
     register,
     login,
     logout,
-    validateToken
+    validateToken,
+    getAllUsers
 }
