@@ -1,23 +1,10 @@
 const Register = () => {
   return (
-    <form action="/" method="get" className="custom-form">
+    <div className="form-fragment">
 
-        <div className="col-lg-6 col-md-6 col-12">
-          <div className="form-floating">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className="form-control"
-              placeholder="Name"
-              required=""
-            />
-
-            <label htmlFor="floatingInput">Name</label>
-          </div>
-        </div>
-
-        <div className="col-lg-6 col-md-6 col-12">
+      <form className="custom-form contact-form own-form">
+        <h1 className="big-form-labels">Register</h1>
+        <div className="col-lg-6 col-md-6 col-12 center">
           <div className="form-floating">
             <input
               type="email"
@@ -27,32 +14,35 @@ const Register = () => {
               className="form-control"
               placeholder="Email address"
               required=""
-            />
+              />
 
             <label htmlFor="floatingInput">Email address</label>
           </div>
         </div>
 
-        <div className="col-lg-12 col-12">
+        <div className="col-lg-6 col-md-6 col-12 center">
           <div className="form-floating">
-            <textarea
+            <input
+              type="password"
+              name="password"
+              id="password"
               className="form-control"
-              id="message"
-              name="message"
-              placeholder="Tell me about the project"
-            ></textarea>
+              placeholder="Password"
+              required=""
+              />
 
-            <label htmlFor="floatingTextarea">Tell me about the project</label>
+            <label htmlFor="floatingInput">Password</label>
           </div>
         </div>
 
-        <div className="col-lg-3 col-12 ms-auto">
+        <div className="col-lg-3 col-12 ms-auto center">
           <button type="submit" className="form-control">
-            Send
+            Done
           </button>
         </div>
-    </form>
+      </form>
+</div>
   );
 };
 
-export default Register
+export default Register;

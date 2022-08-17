@@ -1187,6 +1187,10 @@ strong {
   }
 }
 
+/*---------------------------------------
+CUSTOM CSS
+-----------------------------------------*/
+
 .register, .login, .guest {
   display: inline-block;
   padding: 8px;
@@ -1232,4 +1236,22 @@ margin: auto;
 nav.not-found {
     background-color: #065c43;
     margin-top: 30px;
+}
+
+.own-form {
+  margin-left: 550px;
+  width: 40vw;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.big-form-labels {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form-fragment {
+
 }
