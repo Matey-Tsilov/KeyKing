@@ -6,77 +6,11 @@ export const ContactSection = () => {
                     <div className="container">
                         <div className="row">
 
-                            <div className="col-lg-6 col-md-8 col-12">
-                                <div className="section-title-wrap d-flex justify-content-center align-items-center mb-5">
-                                    <img src="images/aerial-view-man-using-computer-laptop-wooden-table.jpg" className="avatar-image img-fluid" alt="" />
+                            <h2 className="text-white ms-4 mb-0">Send Feedback</h2>
 
-                                    <h2 className="text-white ms-4 mb-0">Say Hi</h2>
-                                </div>
-                            </div>
-
-                            <div className="clearfix"></div>
-
-                            <div className="col-lg-3 col-md-6 col-12 pe-lg-0">
-                                <div className="contact-info contact-info-border-start d-flex flex-column">
-                                    <strong className="site-footer-title d-block mb-3">Services</strong>
-
-                                    <ul className="footer-menu">
-                                        <li className="footer-menu-item"><a href="/" className="footer-menu-link">Websites</a></li>
-
-                                        <li className="footer-menu-item"><a href="/" className="footer-menu-link">Branding</a></li>
-
-                                        <li className="footer-menu-item"><a href="/" className="footer-menu-link">Ecommerce</a></li>
-
-                                        <li className="footer-menu-item"><a href="/" className="footer-menu-link">SEO</a></li>
-                                    </ul>
-
-                                    <strong className="site-footer-title d-block mt-4 mb-3">Stay connected</strong>
-
-                                    <ul className="social-icon">
-
-                                        <li className="social-icon-item"><a href="https://twitter.com/minthu" className="social-icon-link bi-twitter"> </a></li>
-
-                                        <li className="social-icon-item"><a href="/" className="social-icon-link bi-instagram"> </a></li>
-
-                                        <li className="social-icon-item"><a href="/" className="social-icon-link bi-pinterest"> </a></li>
-
-                                        <li className="social-icon-item"><a href="https://www.youtube.com/templatemo" className="social-icon-link bi-youtube"> </a></li>
-                                    </ul>
-
-                                    <strong className="site-footer-title d-block mt-4 mb-3">Start a project</strong>
-
-                                    <p className="mb-0">I'm available for freelance projects</p>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-3 col-md-6 col-12 ps-lg-0">
-                                <div className="contact-info d-flex flex-column">
-                                    <strong className="site-footer-title d-block mb-3">About</strong>
-
-                                    <p className="mb-2">
-                                        Joshua is a professional web developer. Feel free to get in touch with me.
-                              </p>
-
-                                    <strong className="site-footer-title d-block mt-4 mb-3">Email</strong>
-
-                                    <p>
-                                        <a href="mailto:hello@josh.design">
-                                            hello@josh.design
-                                        </a>
-                                    </p>
-
-                                    <strong className="site-footer-title d-block mt-4 mb-3">Call</strong>
-
-                                    <p className="mb-0">
-                                        <a href="tel: 120-240-9600">
-                                            120-240-9600
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
 
                             <div className="col-lg-6 col-12 mt-5 mt-lg-0">
-                                <form action="/" method="get" className="custom-form contact-form">
+                                <form action="/" method="get" className="custom-form contact-form center">
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-12">
                                             <div className="form-floating">
