@@ -59,6 +59,13 @@ The documentation below assumes you are pre-pending the Base URL to the endpoint
 - `/users/register` -- register
 - `/users/login` -- login
 - `/users/logout` -- logout
+- `/users -- getAllUsers
+
+## Get all of the users ##
+
+GET request to `/users`
+
+Server will return object with all of the users
 
 ## Create a new user [register & login]
 
@@ -89,7 +96,7 @@ Content:
 
 ## Logout
 
-# GET to users/logout
+GET request to `/users/logout`
 
 (Adds userToken to a blackList)
 
