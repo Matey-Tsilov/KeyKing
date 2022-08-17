@@ -11,7 +11,7 @@ https://templatemo.com/tm-578-first-portfolio
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  --white-color:                  #ffffff;
+  --white-color:                  #FFFFFF;
   --primary-color:                #535da1;
   --secondary-color:              #14B789;
   --section-bg-color:             #f9f9f9;
@@ -885,10 +885,12 @@ strong {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-  border-top: 1px solid var(--border-color);
   padding-top: 50px;
   padding-bottom: 50px;
+  bottom: 0;
+  position: fixed;
   text-align: center;
+  width: 100%;
 }
 
 .site-footer-title {
@@ -1215,4 +1217,14 @@ margin: auto;
 .message {
   height: 25%;
   width: 30%;
+}
+
+.not-found {
+  text-align: center;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
