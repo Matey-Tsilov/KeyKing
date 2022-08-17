@@ -1,7 +1,7 @@
 const Register = () => {
   return (
-    <form action="/" method="get" className="custom-form contact-form center">
-      <div className="row">
+    <form action="/" method="get" className="custom-form">
+
         <div className="col-lg-6 col-md-6 col-12">
           <div className="form-floating">
             <input
@@ -51,7 +51,6 @@ const Register = () => {
             Send
           </button>
         </div>
-      </div>
     </form>
   );
 };

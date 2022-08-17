@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const HeroSection = () => {
    return (
      <section className="hero d-flex justify-content-center align-items-center" id="section_1">
@@ -13,11 +15,21 @@ export const HeroSection = () => {
 
                                 <h2 className="mb-4">Do you want to type fast?</h2>
                                 <div>
-                                <p className="mb-4 login"><a className="custom-btn btn custom-link" href="#section_2">Login</a></p>
+                                <p className="mb-4 login">
+                                    <Link to={'/login'} className="custom-btn btn custom-link">Login</Link>
+
+                                </p>
+
                                 <p className="space">&nbsp;&nbsp;&nbsp;</p>
-                                <p className="mb-4 register"><a className="custom-btn btn custom-link" href="#section_2">Register</a></p>
+
+                                <p className="mb-4 register">
+                                    <Link to={"/register"} className="custom-btn btn custom-link">Register</Link>
+                                </p>
                                 <p className="space">&nbsp;&nbsp;&nbsp;</p>
-                                <p className="mb-4 guest"><a className="custom-btn btn custom-link" href="#section_2">Guest</a></p>
+
+                                <p className="mb-4 guest">
+                                    <Link to={"/"} className="custom-btn btn custom-link">Guest</Link>
+                                </p>
                                 </div>
 
                             </div>
