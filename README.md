@@ -65,11 +65,11 @@ The documentation below assumes you are pre-pending the Base URL to the endpoint
 
 GET request to `/users`
 
-Server will return object with all of the users
+Server will return an array with all of the user objects
 
 ## Create a new user [register & login]
 
-Create a new user by sending a `POST` request to `/users/register` or `/users/register` with properties `email`, `password`. The service will respond with an object, containing accessToken, email and _id of the newly created user.
+Create a new user by sending a `POST` request to `/users/register` or `/users/login` with properties `email`, `password`. The service will respond with an object, containing accessToken, email and _id of the newly created user.
 
 ### Body
 
