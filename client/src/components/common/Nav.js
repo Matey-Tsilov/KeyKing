@@ -1,8 +1,20 @@
-import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { Link, useLocation } from "react-router-dom"
+import { VALID_PATHS } from "../../constants"
 
 export const Nav = () => {
+
+    const location = useLocation()
+
+    const [notFound, setNotFound] = useState(false)
+
+    useEffect(() => {
+       setNotFound(!VALID_PATHS.includes(location.pathname))
+    }, [location])
+
+
     return (
-        <nav className="navbar navbar-expand-lg">
+        <nav className={`navbar navbar-expand-lg ${notFound && 'not-found'}`}>
             <div className="container">
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

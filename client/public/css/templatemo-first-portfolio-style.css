@@ -1228,3 +1228,8 @@ margin: auto;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+nav.not-found {
+    background-color: #065c43;
+    margin-top: 30px;
+}
