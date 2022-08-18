@@ -1,1 +1,1 @@
-export const VALID_PATHS = ['/', '/ranking', '/quests', '/practice', '/my-profile']
+export const VALID_PATHS = ['/']

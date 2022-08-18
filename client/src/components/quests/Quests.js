@@ -1,12 +1,20 @@
-import * as api from '../../api/api';
+import { useEffect, useState } from 'react';
+import * as api from '../../api/api.js';
 import { QuestCard } from './Card';
 
-export const Quests = async () => {
-    const allTexts = await api.get('/data/catalog') 
+export const Quests = () => {
 
-    return (
-        <div className='center'>
-             {allTexts.map(text => <QuestCard key={text._id} {...text}/>)}
-        </div>
-  );
+    const [users, setUsers] = useState([])
+
+    useEffect(() => {
+        api.get('/data/catalog')
+           .then(res => setUsers(res))
+
+    }, [users])
+
+        return (
+            <div className='center cards-container'>
+                 {users.map((text) => <QuestCard key={text._id} text={text}/>)}
+            </div>
+      );
 }

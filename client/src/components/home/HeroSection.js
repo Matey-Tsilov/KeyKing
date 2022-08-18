@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom"
+import { getUserData } from "../../api/util"
+
+const user = getUserData()
 
 export const HeroSection = () => {
    return (
@@ -12,9 +15,12 @@ export const HeroSection = () => {
 
                                     <h1 className="hero-title ms-3 mb-0">Welcome!</h1>
                                 </div>
-
+                  
+                                {!user 
+                                ? <>
                                 <h2 className="mb-4">Do you want to type fast?</h2>
                                 <div>
+                                
                                 <p className="mb-4 login">
                                     <Link to={'/login'} className="custom-btn btn custom-link">Login</Link>
 
@@ -31,6 +37,9 @@ export const HeroSection = () => {
                                     <Link to={"/"} className="custom-btn btn custom-link">Guest</Link>
                                 </p>
                                 </div>
+                                </>
+                                 
+                                 : <h2 className="mb-4">{user.email}</h2>}
 
                             </div>
                         </div>

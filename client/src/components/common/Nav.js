@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getUserData } from "../../api/util";
 import { VALID_PATHS } from "../../constants";
 import * as api from "../../api/api.js"
 export const Nav = () => {
   const location = useLocation();
+
+  const navigate = useNavigate()
 
   const [notFound, setNotFound] = useState(false);
 
@@ -13,6 +15,11 @@ export const Nav = () => {
   }, [location]);
 
   const user = getUserData();
+
+  const logoutHandler = () => {
+    api.logout(); 
+    navigate('/')
+  }
 
   return (
     <nav className={`navbar navbar-expand-lg ${notFound && "not-found"}`}>
@@ -76,7 +83,7 @@ export const Nav = () => {
             <Link to={"/"} className="navbar-icon me-3 bi-envelope-fill" />
           </div>
           <div>
-            { user && <Link to={"/"} className="navbar-icon me-3 bi bi-escape" onClick={() => api.logout()}>Logout</Link>}
+            { user && <Link to={"/"} className="navbar-icon me-3 bi bi-escape" onClick={logoutHandler}>Logout</Link>}
           </div>
         </div>
       </div>

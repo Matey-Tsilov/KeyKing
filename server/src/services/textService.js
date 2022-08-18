@@ -6,12 +6,13 @@ if (query) {
     return Text.find({_ownerId: userId})
     
 }else {
-    return Text.find({})
+    const allUsers = await Text.find({})
+    return allUsers
 
 }
 }
 async function createText(data) {
-    const Text = new Text({
+    const cratedText = new Text({
         title: data.title,
         language: data.language,
         time: data.time,
@@ -20,9 +21,9 @@ async function createText(data) {
         _ownerId: data._ownerId
       })
 
-      await Text.save()
+      await cratedText.save()
 
-      return Text
+      return cratedText
 }
 async function getById(id) {
     return Text.findById(id)

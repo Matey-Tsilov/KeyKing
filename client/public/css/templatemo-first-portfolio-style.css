@@ -1270,6 +1270,18 @@ margin-bottom: 10px;
   margin-top: 30px;
 }
 
+/* forms */
 .err {
   color: red;
+}
+
+/* Cards.js and QuestCards.js */
+.cards {
+  display: inline-block;
+ margin-top: 20vh;
+  margin-left: 2vh;
+}
+
+.cards-container {
+  margin-left: 42vh;
 }
