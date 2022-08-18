@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ErrorModal } from "../ErrorModal/ErrorModal.js";
 import * as api from '../../api/api.js'
 
 const Register = () => {
@@ -16,6 +17,10 @@ const Register = () => {
     checkbox: false
   });
 
+  const [errorObj, setErrorObj] = useState({})
+
+
+
   const onInputChange = (e) => {        
        
        if (e.target.name === 'checkbox') {
@@ -30,30 +35,37 @@ const Register = () => {
   const onFormSubmit = async (e) => {
         e.preventDefault()
 
-        if (values.password === values.rePass) {
-            const createdUserInfo = await api.register(values.email,values.password)
-            navigate('/')
+        if (values.password !== values.rePass) {
+            setErrorObj({message: "Passwords don't match"})
         }else {
-            throw {message: "Passwords don't match!"}
-        }  
+            try {
+               const createdUserInfo = await api.register(values.email,values.password)
+               navigate('/')
+            } catch (error) {
+               setErrorObj(error)
+           }
+        }
 
   }
 
   return (
+ <>
+    {errorObj.message === undefined ? null : <ErrorModal error={errorObj}/>}
+
     <div className="form-fragment">
       <form onSubmit={onFormSubmit} className="custom-form contact-form own-form">
         <h1 className="big-form-labels">Register</h1>
         <div className="col-lg-6 col-md-6 col-12 center">
           <div className="form-floating">
             <input
-              type="email"
+              type="text"
               name="email"
               id="email"
               className="form-control"
               placeholder="Email address"
               value={values.email}
               onChange={onInputChange}
-            />
+              />
 
             <label htmlFor="floatingInput">Email address:</label>
           </div>
@@ -70,7 +82,7 @@ const Register = () => {
               value={values.password}
               onChange={onInputChange}
               ref={passRef}
-            />
+              />
 
             <label htmlFor="floatingInput">Password:</label>
           </div>
@@ -87,7 +99,7 @@ const Register = () => {
               value={values.rePass}
               onChange={onInputChange}
               ref={rePassRef}
-            />
+              />
 
             <label htmlFor="floatingInput">Repeat password:</label>
           </div>
@@ -111,6 +123,7 @@ const Register = () => {
         </div>
       </form>
     </div>
+</>
   );
 };
 
