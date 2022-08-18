@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Register from "./components/register/Register.js";
 import Login from "./components/login/Login.js";
 import NotFound from "./components/404/404.js";
+import { Quests } from "./components/quests/Quests";
 
 function App() {
   return (
@@ -24,9 +25,11 @@ function App() {
             </>
           }
         />
+        <Route path="/quests" element={<Quests />}/>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />}/>
+
       </Routes>
 
 
