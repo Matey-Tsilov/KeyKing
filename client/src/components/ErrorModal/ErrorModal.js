@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button'
 
 export const ErrorModal = ({error}) => {
 
@@ -15,13 +16,13 @@ export const ErrorModal = ({error}) => {
   
     return (
       <>
-        <Modal show={isOpen} onHide={hideModal}>
+        <Modal show={isOpen} onHide={hideModal} size='md'>
           <Modal.Header>
             <Modal.Title>Oops!</Modal.Title>
           </Modal.Header>
           <Modal.Body>{error.message}</Modal.Body>
           <Modal.Footer>
-            <button onClick={hideModal}>Cancel</button>
+            <Button variant="danger" onClick={hideModal}>Cancel</Button>
           </Modal.Footer>
         </Modal>
       </>
