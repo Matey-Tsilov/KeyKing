@@ -35,7 +35,7 @@ const Register = () => {
 
   const [errorObj, setErrorObj] = useState({})
 
-  const disableBtn = Object.values(values).some((v) => v == '')
+  const emptyInputs = Object.values(values).some((v) => v == '')
 
   const onValidateInputs = (e) => {
     const inputName = e.target.name
@@ -67,7 +67,9 @@ const Register = () => {
 
         if (values.password !== values.rePass) {
             setErrorObj({message: "Passwords don't match"})
-        }else {
+        }else if(emptyInputs){
+            setErrorObj({message: "Please fill all fields before creating an account!"})
+        } else {
             try {
                const createdUserInfo = await api.register(values.email,values.password)
                navigate('/')
@@ -152,8 +154,8 @@ const Register = () => {
         </div>
 
         <div className="col-lg-3 col-12 ms-auto center">
-          <button type="submit" className="form-control" disabled={disableBtn}>
-            {disableBtn ? "Fill all fields before creating account!" : "Create"}
+          <button type="submit" className="form-control" >
+            Create
           </button>
         </div>
         <div className="middle">
