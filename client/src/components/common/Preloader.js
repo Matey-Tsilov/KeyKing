@@ -1,4 +1,4 @@
-export const Preloader = () => {
+const Preloader = () => {
 return (
     <section className="preloader">
     <div className="spinner">
@@ -7,3 +7,5 @@ return (
     </section>
 )
 }
+
+export default Preloader

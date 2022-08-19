@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { Link } from "react-router-dom"
 import UserContext from "../../Contexts/Context"
 
-export const HeroSection = () => {
+const HeroSection = () => {
 
 const {user} = useContext(UserContext)
 
@@ -58,3 +58,5 @@ const {user} = useContext(UserContext)
     </section>
 )
 }
+
+export default HeroSection

@@ -5,7 +5,7 @@ import UserContext from '../../Contexts/Context.js';
 import { QuestCard } from './Card';
 
 
-export const Quests = () => {
+const Quests = () => {
     const {user} = useContext(UserContext)
 
     const [texts, setTexts] = useState([])
@@ -30,3 +30,5 @@ export const Quests = () => {
 
 
 }
+
+export default Quests

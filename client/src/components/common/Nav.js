@@ -4,7 +4,7 @@ import { VALID_PATHS } from "../../constants";
 import * as api from "../../api/api.js";
 import UserContext from "../../Contexts/Context";
 
-export const Nav = () => {
+const Nav = () => {
   const location = useLocation();
 
   const navigate = useNavigate();
@@ -101,3 +101,5 @@ export const Nav = () => {
     </nav>
   );
 };
+
+export default Nav
