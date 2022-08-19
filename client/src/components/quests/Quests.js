@@ -4,17 +4,19 @@ import { QuestCard } from './Card';
 
 export const Quests = () => {
 
-    const [users, setUsers] = useState([])
+    const [texts, setTexts] = useState([])
 
     useEffect(() => {
         api.get('/data/catalog')
-           .then(res => setUsers(res))
+           .then(res => setTexts(res))
 
-    }, [users])
+    }, [texts])
 
-        return (
-            <div className='center cards-container'>
-                 {users.map((text) => <QuestCard key={text._id} text={text}/>)}
-            </div>
-      );
+    const result = texts.length == 0 
+    ? <div className='center cards-container'>
+       {texts.map((text) => <QuestCard key={text._id} text={text}/>)}
+      </div>
+    : <div className='center no-quests'>No quests yet. Why don't you create one?</div>
+
+    return result;
 }

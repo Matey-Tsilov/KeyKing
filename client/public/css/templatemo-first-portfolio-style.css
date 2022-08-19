@@ -998,6 +998,7 @@ strong {
 
   .hero-image {
     min-width: 645px;
+    transform: rotate(50);
   }
   
   .hero-title,
@@ -1284,4 +1285,10 @@ margin-bottom: 10px;
 
 .cards-container {
   margin-left: 42vh;
+}
+
+.no-quests {
+  text-align: center;
+  height: 80%;
+  
 }

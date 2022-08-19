@@ -1,7 +1,6 @@
 import { Footer } from "./components/common/Footer";
 import { Nav } from "./components/common/Nav";
 import { Preloader } from "./components/common/Preloader";
-import { ContactSection } from "./components/contact/ContactSection.js";
 import { HeroSection } from "./components/home/HeroSection.js";
 import { Routes, Route } from "react-router-dom";
 import Register from "./components/register/Register.js";
@@ -10,6 +9,7 @@ import NotFound from "./components/404/404.js";
 import { Quests } from "./components/quests/Quests";
 
 function App() {
+
   return (
     <div>
       <Preloader />
@@ -17,19 +17,12 @@ function App() {
 
 
       <Routes>
-        <Route path="/"
-          element={
-            <>
-              <HeroSection />
-              <ContactSection />
-            </>
-          }
-        />
+        <Route path="/" element={<HeroSection />}/>
         <Route path="/quests" element={<Quests />}/>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<HeroSection />} />
         <Route path="*" element={<NotFound />}/>
-
       </Routes>
 
 

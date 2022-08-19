@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getUserData } from "../../api/util";
 import { VALID_PATHS } from "../../constants";
-import * as api from "../../api/api.js"
+import * as api from "../../api/api.js";
+
+
 export const Nav = () => {
   const location = useLocation();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [notFound, setNotFound] = useState(false);
 
@@ -16,10 +18,10 @@ export const Nav = () => {
 
   const user = getUserData();
 
-  const logoutHandler = () => {
-    api.logout(); 
-    navigate('/')
-  }
+  const logoutHandler = async () => {
+    await api.logout()
+    navigate("/logout")
+  };
 
   return (
     <nav className={`navbar navbar-expand-lg ${notFound && "not-found"}`}>
@@ -60,8 +62,7 @@ export const Nav = () => {
               </Link>
             </li>
 
-            {user 
-            ? (
+            {user ? (
               <>
                 <li className="nav-item">
                   <Link to="/ranking" className="nav-link click-scroll">
@@ -75,15 +76,20 @@ export const Nav = () => {
                   </Link>
                 </li>
               </>
-            ) 
-            : null}
+            ) : null}
           </ul>
 
           <div className="d-lg-flex align-items-center d-none ms-auto">
             <Link to={"/"} className="navbar-icon me-3 bi-envelope-fill" />
           </div>
           <div>
-            { user && <Link to={"/"} className="navbar-icon me-3 bi bi-escape" onClick={logoutHandler}>Logout</Link>}
+            {user && (
+            <button
+              className="me-3 bi-door-open-fill"
+              onClick={logoutHandler}
+              >
+            </button>
+            )}
           </div>
         </div>
       </div>

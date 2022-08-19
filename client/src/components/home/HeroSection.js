@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
 import { getUserData } from "../../api/util"
 
-const user = getUserData()
-
 export const HeroSection = () => {
+
+    const user = getUserData()
+    console.log(user);
+
    return (
      <section className="hero d-flex justify-content-center align-items-center" id="section_1">
                 <div className="container">
@@ -16,7 +18,7 @@ export const HeroSection = () => {
                                     <h1 className="hero-title ms-3 mb-0">Welcome!</h1>
                                 </div>
                   
-                                {!user 
+                                {user == null 
                                 ? <>
                                 <h2 className="mb-4">Do you want to type fast?</h2>
                                 <div>

@@ -6,7 +6,6 @@ import * as api from "../../api/api.js";
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const btnRef = useRef();
 
   const refs = {
     email: emailRef,
