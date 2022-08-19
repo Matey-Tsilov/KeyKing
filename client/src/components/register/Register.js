@@ -35,7 +35,7 @@ const Register = () => {
 
   const [errorObj, setErrorObj] = useState({})
 
-  const emptyInputs = Object.values(values).some((v) => v == '')
+  const emptyInputs = Object.values(values).some((v) => v.name != 'checkbox' && v == '')
 
   const onValidateInputs = (e) => {
     const inputName = e.target.name

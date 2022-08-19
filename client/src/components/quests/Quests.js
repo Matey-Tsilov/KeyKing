@@ -4,6 +4,7 @@ import { QuestCard } from './Card';
 
 export const Quests = () => {
 
+
     const [texts, setTexts] = useState([])
 
     useEffect(() => {
@@ -12,11 +13,13 @@ export const Quests = () => {
 
     }, [texts])
 
-    const result = texts.length == 0 
+    const result = texts.length != 0 
+    
+    return (result
     ? <div className='center cards-container'>
        {texts.map((text) => <QuestCard key={text._id} text={text}/>)}
       </div>
-    : <div className='center no-quests'>No quests yet. Why don't you create one?</div>
+    : <div className='center no-quests'>No quests yet. Why don't you create one?</div>)
 
-    return result;
+
 }

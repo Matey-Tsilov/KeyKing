@@ -1,12 +1,12 @@
-import { Footer } from "./components/common/Footer";
-import { Nav } from "./components/common/Nav";
-import { Preloader } from "./components/common/Preloader";
-import { HeroSection } from "./components/home/HeroSection.js";
+import { Footer } from "./components/Common/Footer";
+import { Nav } from "./components/Common/Nav";
+import { Preloader } from "./components/Common/Preloader";
+import { HeroSection } from "./components/Home/HeroSection.js";
 import { Routes, Route } from "react-router-dom";
-import Register from "./components/register/Register.js";
-import Login from "./components/login/Login.js";
+import Register from "./components/Register/Register.js";
+import Login from "./components/Login/Login.js";
 import NotFound from "./components/404/404.js";
-import { Quests } from "./components/quests/Quests";
+import { Quests } from "./components/Quests/Quests";
 
 function App() {
 
