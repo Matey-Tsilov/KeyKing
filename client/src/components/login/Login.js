@@ -36,7 +36,7 @@ const Login = () => {
   const onValidateInputs = (e) => {
     const inputName = e.target.name;
 
-    if (e.target.value == "") {
+    if (e.target.value === "") {
       setValid((v) => {
         return { ...v, [inputName]: "invalid" };
       });
@@ -68,7 +68,6 @@ const Login = () => {
           values.email,
           values.password
         );
-        console.log(getUserInfo);
         setUser(getUserInfo)
         navigate("/");
       } catch (error) {

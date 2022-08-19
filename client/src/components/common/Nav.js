@@ -65,7 +65,7 @@ export const Nav = () => {
               </Link>
             </li>
 
-            {JSON.stringify(user) != '{}' 
+            {JSON.stringify(user) !== '{}' 
             ? (
               <>
                 <li className="nav-item">
@@ -87,7 +87,7 @@ export const Nav = () => {
             <Link to={"/"} className="navbar-icon me-3 bi-envelope-fill" />
           </div>
           <div>
-            {JSON.stringify(user) != '{}' && (
+            {JSON.stringify(user) !== '{}' && (
             <button
               className="me-3 bi-door-open-fill"
               onClick={logoutHandler}

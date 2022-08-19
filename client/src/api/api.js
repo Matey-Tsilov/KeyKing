@@ -1,4 +1,4 @@
-import { getUserData, setUserData, clearUserData } from "./util.js"
+import { getUserData} from "./util.js"
 
 const host = "http://localhost:3030"
 
@@ -43,25 +43,26 @@ function createOptions(method = 'get', data) {
         options.headers['Content-Type'] = 'application/json'
         options.body = JSON.stringify(data)
     }
+
     const userData = getUserData()
     if (userData) {
-        options.headers['X-Authorization'] = userData.token
+        options.headers['X-Authorization'] = userData.accessToken
     }
     
     return options
 }
 
-async function get(url) {
-    return request(url, createOptions())
+async function get(url, userData) {
+    return request(url, createOptions(userData))
 }
-async function post(url, data) {
-    return request(url, createOptions('post', data))
+async function post(url, data, userData) {
+    return request(url, createOptions('post', data, userData))
 }
-async function put(url, data) {
-    return request(url, createOptions('put', data))
+async function put(url, data, userData) {
+    return request(url, createOptions('put', data, userData))
 }
-async function del(url) {
-    return request(url, createOptions('delete'))
+async function del(url, userData) {
+    return request(url, createOptions('delete', userData))
 }
 
 async function login(email, password) {
@@ -100,8 +101,9 @@ async function register(email, password) {
 }
 
 async function logout() {
-    return await get('/users/logout')
+    await get('/users/logout')
     // clearUserData()
+    return
 
 }
 
