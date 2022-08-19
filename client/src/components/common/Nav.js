@@ -4,9 +4,6 @@ import { VALID_PATHS } from "../../constants";
 import * as api from "../../api/api.js";
 import UserContext from "../../Contexts/Context";
 
-
-
-
 export const Nav = () => {
   const location = useLocation();
 
@@ -18,12 +15,12 @@ export const Nav = () => {
     setNotFound(!VALID_PATHS.includes(location.pathname));
   }, [location]);
 
-   const {user, setUser} = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext);
 
   const logoutHandler = async () => {
-    await api.logout()
-    setUser({})
-    navigate("/logout")
+    await api.logout();
+    setUser({});
+    navigate("/logout");
   };
 
   return (
@@ -65,8 +62,7 @@ export const Nav = () => {
               </Link>
             </li>
 
-            {JSON.stringify(user) !== '{}' 
-            ? (
+            {JSON.stringify(user) !== "{}" ? (
               <>
                 <li className="nav-item">
                   <Link to="/ranking" className="nav-link click-scroll">
@@ -79,6 +75,12 @@ export const Nav = () => {
                     My Profile
                   </Link>
                 </li>
+
+                <li className="nav-item">
+                  <Link to="/create" className="nav-link click-scroll">
+                    Create
+                  </Link>
+                </li>
               </>
             ) : null}
           </ul>
@@ -87,12 +89,11 @@ export const Nav = () => {
             <Link to={"/"} className="navbar-icon me-3 bi-envelope-fill" />
           </div>
           <div>
-            {JSON.stringify(user) !== '{}' && (
-            <button
-              className="me-3 bi-door-open-fill"
-              onClick={logoutHandler}
-              >
-            </button>
+            {JSON.stringify(user) !== "{}" && (
+              <button
+                className="me-3 bi-door-open-fill"
+                onClick={logoutHandler}
+              ></button>
             )}
           </div>
         </div>
