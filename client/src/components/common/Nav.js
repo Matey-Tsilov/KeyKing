@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { getUserData } from "../../api/util";
 import { VALID_PATHS } from "../../constants";
 import * as api from "../../api/api.js";
+import UserContext from "../../Contexts/Context";
+
+
 
 
 export const Nav = () => {
@@ -16,10 +18,11 @@ export const Nav = () => {
     setNotFound(!VALID_PATHS.includes(location.pathname));
   }, [location]);
 
-  const user = getUserData();
+   const {user, setUser} = useContext(UserContext)
 
   const logoutHandler = async () => {
     await api.logout()
+    setUser({})
     navigate("/logout")
   };
 
@@ -62,7 +65,8 @@ export const Nav = () => {
               </Link>
             </li>
 
-            {user ? (
+            {JSON.stringify(user) != '{}' 
+            ? (
               <>
                 <li className="nav-item">
                   <Link to="/ranking" className="nav-link click-scroll">
@@ -83,7 +87,7 @@ export const Nav = () => {
             <Link to={"/"} className="navbar-icon me-3 bi-envelope-fill" />
           </div>
           <div>
-            {user && (
+            {JSON.stringify(user) != '{}' && (
             <button
               className="me-3 bi-door-open-fill"
               onClick={logoutHandler}

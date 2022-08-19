@@ -7,11 +7,18 @@ import Register from "./components/Register/Register.js";
 import Login from "./components/Login/Login.js";
 import NotFound from "./components/404/404.js";
 import { Quests } from "./components/Quests/Quests";
+import { useState } from "react";
+
+import UserContext from "./Contexts/Context.js";
 
 function App() {
 
+  const [user, setUser] = useState({})
+
   return (
+    
     <div>
+      <UserContext.Provider value={{user, setUser}}>
       <Preloader />
       <Nav />
 
@@ -27,6 +34,7 @@ function App() {
 
 
       <Footer />
+    </UserContext.Provider>
     </div>
   );
 }

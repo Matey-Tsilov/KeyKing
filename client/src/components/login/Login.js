@@ -1,7 +1,10 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorModal } from "../ErrorModal/ErrorModal.js";
 import * as api from "../../api/api.js";
+import UserContext from "../../Contexts/Context.js";
+
+
 
 const Login = () => {
   const emailRef = useRef();
@@ -25,6 +28,8 @@ const Login = () => {
   });
 
   const [errorObj, setErrorObj] = useState({});
+
+  const {user, setUser} = useContext(UserContext)
 
   const emptyInputs = Object.values(values).some((v) => v == "");
 
@@ -63,6 +68,8 @@ const Login = () => {
           values.email,
           values.password
         );
+        console.log(getUserInfo);
+        setUser(getUserInfo)
         navigate("/");
       } catch (error) {
         setErrorObj(error);

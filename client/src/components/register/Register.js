@@ -1,11 +1,13 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorModal } from "../ErrorModal/ErrorModal.js";
 import * as api from '../../api/api.js'
 
+import UserContext from "../../Contexts/Context.js";
+
 const Register = () => {
 
-
+  //Red border
   const emailRef = useRef()
   const passwordRef = useRef()
   const rePassRef = useRef()
@@ -34,6 +36,8 @@ const Register = () => {
   })
 
   const [errorObj, setErrorObj] = useState({})
+
+  const {user, setUser} = useContext(UserContext)
 
   const emptyInputs = Object.values(values).some((v) => v.name != 'checkbox' && v == '')
 
@@ -72,6 +76,7 @@ const Register = () => {
         } else {
             try {
                const createdUserInfo = await api.register(values.email,values.password)
+               setUser(createdUserInfo)
                navigate('/')
             } catch (error) {
                setErrorObj(error)

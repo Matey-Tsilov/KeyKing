@@ -67,16 +67,18 @@ async function del(url) {
 async function login(email, password) {
 
     const serverRes = await post('/users/login', {email, password})
+
+    return serverRes
     
-    const userData = {
-        email: serverRes.email, 
-        password: serverRes.password,
-        token: serverRes.accessToken,
-        id: serverRes._id,
-    }
+    // const userData = {
+    //     email: serverRes.email, 
+    //     password: serverRes.password,
+    //     token: serverRes.accessToken,
+    //     id: serverRes._id,
+    // }
     
 
-    setUserData(userData)
+    // setUserData(userData)
 
 }
 
@@ -84,20 +86,22 @@ async function register(email, password) {
 
     const serverRes = await post('/users/register', {email, password})
     
-    const userData = {
-        email: serverRes.email, 
-        password: serverRes.password,
-        token: serverRes.accessToken,
-        id: serverRes._id
-    }
+    return serverRes
 
-    setUserData(userData)
+    // const userData = {
+    //     email: serverRes.email, 
+    //     password: serverRes.password,
+    //     token: serverRes.accessToken,
+    //     id: serverRes._id
+    // }
+
+    // setUserData(userData)
 
 }
 
 async function logout() {
-    await get('/users/logout')
-    clearUserData()
+    return await get('/users/logout')
+    // clearUserData()
 
 }
 
