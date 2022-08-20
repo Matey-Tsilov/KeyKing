@@ -71,16 +71,16 @@ const Nav = () => {
                 </li>
 
                 <li className="nav-item">
+                  <Link to="/create" className="nav-link click-scroll">
+                    Create
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link to={"/my-profile"} className="nav-link click-scroll">
                     My Profile
                   </Link>
                 </li>
 
-                <li className="nav-item">
-                  <Link to="/create" className="nav-link click-scroll">
-                    Create
-                  </Link>
-                </li>
               </>
             ) : null}
           </ul>

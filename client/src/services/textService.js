@@ -6,8 +6,14 @@ const getAllTexts = async () => {
     return all
 }
 
+const createText = async (textData) => {
+    const createdText = await api.post('/data/catalog', textData )
+    return createdText
+}
+
 
 
 export {
-    getAllTexts
+    getAllTexts,
+    createText
 }

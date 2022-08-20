@@ -83,7 +83,7 @@ const Create = () => {
             onSubmit={onFormSubmit}
             className="custom-form contact-form own-form"
           >
-            <h1 className="big-form-labels">Login</h1>
+            <h1 className="big-form-labels">Create new Text</h1>
             <div className="col-lg-6 col-md-6 col-12 center">
               <div className="form-floating">
                 <input
@@ -125,16 +125,91 @@ const Create = () => {
                 ) : null}
               </div>
             </div>
+            <div className="col-lg-6 col-md-6 col-12 center">
+              <div className="form-floating">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  className="form-control"
+                  placeholder="Email address"
+                  value={values.email}
+                  onChange={onInputChange}
+                  ref={emailRef}
+                  onBlur={onValidateInputs}
+                />
+  
+                <label htmlFor="floatingInput">Email address:</label>
+                {validation.email == "invalid" ? (
+                  <p className="err"> Email is mandatory! </p>
+                ) : null}
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-12 center">
+              <div className="form-floating">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  className="form-control"
+                  placeholder="Email address"
+                  value={values.email}
+                  onChange={onInputChange}
+                  ref={emailRef}
+                  onBlur={onValidateInputs}
+                />
+  
+                <label htmlFor="floatingInput">Email address:</label>
+                {validation.email == "invalid" ? (
+                  <p className="err"> Email is mandatory! </p>
+                ) : null}
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-12 center">
+              <div className="form-floating">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  className="form-control"
+                  placeholder="Email address"
+                  value={values.email}
+                  onChange={onInputChange}
+                  ref={emailRef}
+                  onBlur={onValidateInputs}
+                />
+  
+                <label htmlFor="floatingInput">Email address:</label>
+                {validation.email == "invalid" ? (
+                  <p className="err"> Email is mandatory! </p>
+                ) : null}
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-12 center">
+              <div className="form-floating">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  className="form-control"
+                  placeholder="Email address"
+                  value={values.email}
+                  onChange={onInputChange}
+                  ref={emailRef}
+                  onBlur={onValidateInputs}
+                />
+  
+                <label htmlFor="floatingInput">Email address:</label>
+                {validation.email == "invalid" ? (
+                  <p className="err"> Email is mandatory! </p>
+                ) : null}
+              </div>
+            </div>
   
             <div className="col-lg-3 col-12 ms-auto center">
               <button type="submit" className="form-control">
-                Login
+                Create
               </button>
-            </div>
-            <div className="middle">
-              <Link className="link" to={"/register"}>
-                <strong>Don't have an account?</strong>
-              </Link>
             </div>
           </form>
         </div>

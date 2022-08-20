@@ -52,17 +52,17 @@ function createOptions(method = 'get', data) {
     return options
 }
 
-async function get(url, userData) {
-    return request(url, createOptions(userData))
+async function get(url) {
+    return request(url, createOptions())
 }
-async function post(url, data, userData) {
-    return request(url, createOptions('post', data, userData))
+async function post(url, data) {
+    return request(url, createOptions('post', data))
 }
-async function put(url, data, userData) {
-    return request(url, createOptions('put', data, userData))
+async function put(url, data) {
+    return request(url, createOptions('put', data))
 }
-async function del(url, userData) {
-    return request(url, createOptions('delete', userData))
+async function del(url) {
+    return request(url, createOptions('delete'))
 }
 
 async function login(email, password) {
