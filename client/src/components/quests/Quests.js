@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import * as api from '../../api/api.js';
 import UserContext from '../../Contexts/Context.js';
 import { QuestCard } from './Card';
+import * as textService from '../../services/textService.js';
 
 
 const Quests = () => {
@@ -12,15 +12,15 @@ const Quests = () => {
 
 
     useEffect(() => {
-        api.get('/data/catalog')
-           .then(res => setTexts(res))
+        textService.getAllTexts()
+           .then(all => setTexts(all))
 
     }, [])
 
     const result = texts.length != 0 
 
     const isNotLogged = <p className='center no-quests'>No quests yet. <Link to={'/login'}>Log in</Link> and create one!</p>
-    const isLogged = <p className='center no-quests'>Why don't you <Link to={'/create'}>create</Link>one?</p>
+    const isLogged = <p className='center no-quests'>No quests yet. Why don't you <Link to={'/create'}>create</Link> one?</p>
     
     return (result
     ? <div className='center cards-container'>
