@@ -1,33 +1,48 @@
-import { useContext, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ErrorModal } from "../ErrorModal/ErrorModal.js";
-import * as api from "../../api/api.js";
-import UserContext from "../../Contexts/Context.js";
+import * as textService from "../../services/textService"
 
 const Create = () => {
-    const emailRef = useRef();
-    const passwordRef = useRef();
+    const titleInputRef = useRef();
+    const languageInputRef = useRef();
+    const lootInputRef = useRef();
+    const imageUrlInputRef = useRef();
+    const contentInputRef = useRef();
+    const timeInputRef = useRef();
+
   
     const refs = {
-      email: emailRef,
-      password: passwordRef,
+      title: titleInputRef,
+      language: languageInputRef,
+      loot: lootInputRef,
+      time: timeInputRef,
+      content: contentInputRef,
+      imageUrl: imageUrlInputRef
+
     };
   
     const navigate = useNavigate();
   
     const [values, setValues] = useState({
-      email: "",
-      password: "",
+        title: '',
+        language: '',
+        loot: '',
+        time: '',
+        content: '',
+        imageUrl: ''
     });
   
     const [validation, setValid] = useState({
-      email: "valid",
-      password: "valid",
+        title: "valid",
+        language: "valid",
+        loot: "valid",
+        time: "valid",
+        content: "valid",
+        imageUrl: "valid"
     });
   
     const [errorObj, setErrorObj] = useState({});
-  
-    const {user, setUser} = useContext(UserContext)
   
     const emptyInputs = Object.values(values).some((v) => v == "");
   
@@ -62,12 +77,8 @@ const Create = () => {
         });
       } else {
         try {
-          const getUserInfo = await api.login(
-            values.email,
-            values.password
-          );
-          setUser(getUserInfo)
-          navigate("/");
+          const createdUser = await textService.createText({...values, loot: Number(values.loot), time: Number(values.time)}) ;
+          navigate("/quests");
         } catch (error) {
           setErrorObj(error);
         }
@@ -88,19 +99,19 @@ const Create = () => {
               <div className="form-floating">
                 <input
                   type="text"
-                  name="email"
-                  id="email"
+                  name="title"
+                  id="title"
                   className="form-control"
-                  placeholder="Email address"
-                  value={values.email}
+                  placeholder="Title here:"
+                  value={values.title}
                   onChange={onInputChange}
-                  ref={emailRef}
+                  ref={titleInputRef}
                   onBlur={onValidateInputs}
                 />
   
-                <label htmlFor="floatingInput">Email address:</label>
-                {validation.email == "invalid" ? (
-                  <p className="err"> Email is mandatory! </p>
+                <label htmlFor="floatingInput">title:</label>
+                {validation.title == "invalid" ? (
+                  <p className="err"> Title field is mandatory! </p>
                 ) : null}
               </div>
             </div>
@@ -108,20 +119,40 @@ const Create = () => {
             <div className="col-lg-6 col-md-6 col-12 center">
               <div className="form-floating">
                 <input
-                  type="password"
-                  name="password"
-                  id="password"
+                  type="text"
+                  name="imageUrl"
+                  id="imageUrl"
                   className="form-control"
-                  placeholder="Password"
-                  value={values.password}
+                  placeholder="Image Url here:"
+                  value={values.imageUrl}
                   onChange={onInputChange}
-                  ref={passwordRef}
+                  ref={imageUrlInputRef}
                   onBlur={onValidateInputs}
                 />
   
-                <label htmlFor="floatingInput">Password:</label>
-                {validation.password == "invalid" ? (
-                  <p className="err"> Password is mandatory! </p>
+                <label htmlFor="floatingInput">imageUrl:</label>
+                {validation.imageUrl == "invalid" ? (
+                  <p className="err"> ImageUrl field is mandatory! </p>
+                ) : null}
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-12 center">
+              <div className="form-floating">
+                <textarea
+                  type="text"
+                  name="content"
+                  id="content"
+                  className="form-control"
+                  placeholder="Email address here:"
+                  value={values.content}
+                  onChange={onInputChange}
+                  ref={contentInputRef}
+                  onBlur={onValidateInputs}
+                />
+  
+                <label htmlFor="floatingInput">content:</label>
+                {validation.content == "invalid" ? (
+                  <p className="err"> Content field is mandatory! </p>
                 ) : null}
               </div>
             </div>
@@ -129,79 +160,61 @@ const Create = () => {
               <div className="form-floating">
                 <input
                   type="text"
-                  name="email"
-                  id="email"
+                  name="language"
+                  id="language"
                   className="form-control"
-                  placeholder="Email address"
-                  value={values.email}
+                  placeholder="Language here:"
+                  value={values.languauge}
                   onChange={onInputChange}
-                  ref={emailRef}
+                  ref={languageInputRef}
                   onBlur={onValidateInputs}
                 />
   
-                <label htmlFor="floatingInput">Email address:</label>
-                {validation.email == "invalid" ? (
-                  <p className="err"> Email is mandatory! </p>
+                <label htmlFor="floatingInput">language:</label>
+                {validation.language == "invalid" ? (
+                  <p className="err"> Language field is mandatory! </p>
                 ) : null}
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-12 center">
               <div className="form-floating">
                 <input
-                  type="text"
-                  name="email"
-                  id="email"
+                  type="number"
+                  name="time"
+                  min={0}
+                  id="time"
                   className="form-control"
-                  placeholder="Email address"
-                  value={values.email}
+                  placeholder="0"
+                  value={values.time}
                   onChange={onInputChange}
-                  ref={emailRef}
+                  ref={timeInputRef}
                   onBlur={onValidateInputs}
                 />
   
-                <label htmlFor="floatingInput">Email address:</label>
-                {validation.email == "invalid" ? (
-                  <p className="err"> Email is mandatory! </p>
+                <label htmlFor="floatingInput">time:</label>
+                {validation.time == "invalid" ? (
+                  <p className="err"> Time field is mandatory! </p>
                 ) : null}
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-12 center">
               <div className="form-floating">
                 <input
-                  type="text"
-                  name="email"
-                  id="email"
+                  type="number"
+                  min={0}
+                  name="loot"
+                  id="loot"
                   className="form-control"
-                  placeholder="Email address"
-                  value={values.email}
+                  placeholder="Loot here:"
+                  value={values.loot}
                   onChange={onInputChange}
-                  ref={emailRef}
+                  ref={lootInputRef}
                   onBlur={onValidateInputs}
                 />
   
-                <label htmlFor="floatingInput">Email address:</label>
-                {validation.email == "invalid" ? (
-                  <p className="err"> Email is mandatory! </p>
-                ) : null}
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-6 col-12 center">
-              <div className="form-floating">
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  className="form-control"
-                  placeholder="Email address"
-                  value={values.email}
-                  onChange={onInputChange}
-                  ref={emailRef}
-                  onBlur={onValidateInputs}
-                />
-  
-                <label htmlFor="floatingInput">Email address:</label>
-                {validation.email == "invalid" ? (
-                  <p className="err"> Email is mandatory! </p>
+                <label htmlFor="floatingInput">loot:</label>
+                {validation.loot == "invalid" ? (
+                  <p className="err"> Loot field is mandatory! </p>
                 ) : null}
               </div>
             </div>

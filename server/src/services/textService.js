@@ -19,7 +19,7 @@ async function createText(data) {
         content: data.content,
         loot: data.loot,
         _ownerId: data._ownerId,
-        imageUrl: req.body.imageUrl
+        imageUrl: data.imageUrl
       })
 
       await cratedText.save()
