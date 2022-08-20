@@ -1284,7 +1284,7 @@ margin-bottom: 10px;
 }
 
 .cards-container {
-  margin-left: 42vh;
+  margin-left: 30vh;
 }
 
 .no-quests {
@@ -1294,4 +1294,8 @@ margin-bottom: 10px;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
   font-size: xx-large;
+}
+
+.align-su {
+  text-align: center;
 }

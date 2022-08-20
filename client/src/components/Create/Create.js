@@ -123,7 +123,7 @@ const Create = () => {
                   name="imageUrl"
                   id="imageUrl"
                   className="form-control"
-                  placeholder="Image Url here:"
+                  placeholder="ImageUrl here:"
                   value={values.imageUrl}
                   onChange={onInputChange}
                   ref={imageUrlInputRef}

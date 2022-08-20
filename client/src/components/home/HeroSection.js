@@ -12,7 +12,7 @@ const HeroSection = () => {
                 <div className="container">
                     <div className="row">
 
-                        <div className="col-lg-7 col-12">
+                        <div className="col-lg-7 col-12 align-su">
                             <div className="hero-text">
                                 <div className="hero-title-wrap d-flex align-items-center mb-4">
                                         {JSON.stringify(user) == '{}' 
@@ -35,11 +35,6 @@ const HeroSection = () => {
 
                                 <p className="mb-4 register">
                                     <Link to={"/register"} className="custom-btn btn custom-link">Register</Link>
-                                </p>
-                                <p className="space">&nbsp;&nbsp;&nbsp;</p>
-
-                                <p className="mb-4 guest">
-                                    <Link to={"/"} className="custom-btn btn custom-link">Guest</Link>
                                 </p>
                                 </div>
                                 </>

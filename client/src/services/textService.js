@@ -7,7 +7,7 @@ const getAllTexts = async () => {
 }
 
 const createText = async (textData) => {
-    const createdText = await api.post('/data/catalog', textData )
+    const createdText = await api.post('/data/catalog', textData)
     return createdText
 }
 

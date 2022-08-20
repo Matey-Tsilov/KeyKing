@@ -12,9 +12,9 @@ import Create from "./components/Create/Create";
 
 import UserContext from "./Contexts/Context.js";
 import useSessionStorage from "./Hooks/useSessionStorage";
+import Details from "./components/Details/Details";
 
 function App() {
-
   const [user, setUser] = useSessionStorage({})
 
   return (
@@ -29,6 +29,7 @@ function App() {
         <Route path="/" element={<HeroSection />}/>
         <Route path="/create" element={<Create />}/>
         <Route path="/quests" element={<Quests />}/>
+        <Route path="/details/:id" element={<Details />}/>        
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<HeroSection />} />

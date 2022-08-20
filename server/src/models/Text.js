@@ -5,10 +5,10 @@ const textSchema = new Schema({
     time: {type: Number},
     language: {type: String},
     content: {type: String},
+    imageUrl: {type: String},
     loot: {
     type: Number,
     min: [0.01, 'Price must be a positive number'],
-    imageUrl: {type: String},
   },
   _ownerId: {type: ObjectId, ref: "User"}
   })

@@ -9,6 +9,7 @@ const Quests = () => {
     const {user} = useContext(UserContext)
 
     const [texts, setTexts] = useState([])
+    console.log(texts);
 
 
     useEffect(() => {
