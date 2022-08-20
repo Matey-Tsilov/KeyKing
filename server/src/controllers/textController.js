@@ -17,6 +17,7 @@ router.post('/catalog', isAuth(), async (req, res) => {
     const item = {
         title: req.body.title,
         language: req.body.language,
+        imageUrl: req.body.imageUrl,
         time: req.body.time,
         content: req.body.content,
         loot: req.body.loot,
@@ -42,6 +43,7 @@ router.put('/catalog/:id', preload(api), isOwner(), async (req, res) => {
         time: req.body.time,
         language: req.body.language,
         content: req.body.content,
+        imageUrl: req.body.imageUrl,
         loot: req.body.loot,
     }
 

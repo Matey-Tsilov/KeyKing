@@ -7,7 +7,8 @@ const textSchema = new Schema({
     content: {type: String},
     loot: {
     type: Number,
-    min: [0.01, 'Price must be a positive number']
+    min: [0.01, 'Price must be a positive number'],
+    imageUrl: {type: String},
   },
   _ownerId: {type: ObjectId, ref: "User"}
   })

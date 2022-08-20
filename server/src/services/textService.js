@@ -18,7 +18,8 @@ async function createText(data) {
         time: data.time,
         content: data.content,
         loot: data.loot,
-        _ownerId: data._ownerId
+        _ownerId: data._ownerId,
+        imageUrl: req.body.imageUrl
       })
 
       await cratedText.save()
@@ -35,6 +36,7 @@ async function updateText(id, upText) {
         language: upText.language,
         time: upText.time,
         content: upText.content,
+        imageUrl: req.body.imageUrl,
         loot: upText.loot,
     })
 
