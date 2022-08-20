@@ -1,5 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+
 
 export const QuestCard = ({text}) => {
     return (
@@ -8,9 +10,9 @@ export const QuestCard = ({text}) => {
         <Card.Body>
           <Card.Title>{text.title}</Card.Title>
           <Card.Text>
-            {text.content}
+            {text.content.slice(0, 50)}
           </Card.Text>
-          <Button variant="primary">Details</Button>
+          <Link to={`/details/${text._id}`}><Button variant="warning">Details</Button></Link>
         </Card.Body>
       </Card>
   );

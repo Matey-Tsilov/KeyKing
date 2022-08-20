@@ -6,6 +6,11 @@ const getAllTexts = async () => {
     return all
 }
 
+const getById = async (id) => {
+    const byId = await api.get('/data/catalog/' + id)
+    return byId
+}
+
 const createText = async (textData) => {
     const createdText = await api.post('/data/catalog', textData)
     return createdText
@@ -15,5 +20,6 @@ const createText = async (textData) => {
 
 export {
     getAllTexts,
-    createText
+    createText,
+    getById
 }

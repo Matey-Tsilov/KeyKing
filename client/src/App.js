@@ -9,10 +9,11 @@ import Login from "./components/Login/Login.js";
 import NotFound from "./components/404/404.js";
 import Quests from "./components/Quests/Quests";
 import Create from "./components/Create/Create";
+import Edit from "./components/Edit/Edit";
+import Details from "./components/Details/Details";
 
 import UserContext from "./Contexts/Context.js";
 import useSessionStorage from "./Hooks/useSessionStorage";
-import Details from "./components/Details/Details";
 
 function App() {
   const [user, setUser] = useSessionStorage({})
@@ -29,7 +30,8 @@ function App() {
         <Route path="/" element={<HeroSection />}/>
         <Route path="/create" element={<Create />}/>
         <Route path="/quests" element={<Quests />}/>
-        <Route path="/details/:id" element={<Details />}/>        
+        <Route path="/details/:id" element={<Details />}/>    
+        <Route path="/edit/:id" element={<Edit />}/>        
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<HeroSection />} />

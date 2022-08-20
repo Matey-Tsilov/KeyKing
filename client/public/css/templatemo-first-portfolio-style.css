@@ -1299,3 +1299,11 @@ margin-bottom: 10px;
 .align-su {
   text-align: center;
 }
+
+.footer-nav-left {
+  padding-left: 40px;
+}
+
+.footer-nav-right {
+  padding-right: 40px;
+}
