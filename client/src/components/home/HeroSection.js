@@ -3,8 +3,9 @@ import { Link } from "react-router-dom"
 import UserContext from "../../Contexts/Context"
 
 const HeroSection = () => {
+    const {user} = useContext(UserContext)
 
-const {user} = useContext(UserContext)
+    let username = user.email?.split('@')[0]
 
    return (
      <section className="hero d-flex justify-content-center align-items-center" id="section_1">
@@ -14,8 +15,10 @@ const {user} = useContext(UserContext)
                         <div className="col-lg-7 col-12">
                             <div className="hero-text">
                                 <div className="hero-title-wrap d-flex align-items-center mb-4">
-
-                                    <h1 className="hero-title ms-3 mb-0">Welcome!</h1>
+                                        {JSON.stringify(user) == '{}' 
+                                        ? <h1 className="hero-title ms-3 mb-0">Hello, my friend!</h1>
+                                        : <h1 className="hero-title ms-3 mb-0">Welcome back</h1>
+                                        }
                                 </div>
                   
                                 {JSON.stringify(user) == '{}'
@@ -41,7 +44,7 @@ const {user} = useContext(UserContext)
                                 </div>
                                 </>
                                  
-                                 : <h2 className="mb-4">{user.email}</h2>}
+                                 : <h2 className="mb-4">{username}</h2>}
 
                             </div>
                         </div>
