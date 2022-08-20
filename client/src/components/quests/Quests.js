@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import UserContext from '../../Contexts/Context.js';
+import UserContext from '../../Contexts/userContext.js';
 import { QuestCard } from './Card';
 import * as textService from '../../services/textService.js';
 
@@ -9,8 +9,6 @@ const Quests = () => {
     const {user} = useContext(UserContext)
 
     const [texts, setTexts] = useState([])
-    console.log(texts);
-
 
     useEffect(() => {
         textService.getAllTexts()

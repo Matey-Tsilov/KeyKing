@@ -29,6 +29,7 @@ async function createText(data) {
 async function getById(id) {
     return Text.findById(id)
 }
+
 async function updateText(id, upText) {
 
     const updatedText = await Text.findByIdAndUpdate(id, {
@@ -36,7 +37,7 @@ async function updateText(id, upText) {
         language: upText.language,
         time: upText.time,
         content: upText.content,
-        imageUrl: req.body.imageUrl,
+        imageUrl: upText.imageUrl,
         loot: upText.loot,
     })
 

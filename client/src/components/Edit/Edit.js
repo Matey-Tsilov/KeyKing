@@ -1,9 +1,27 @@
-import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ErrorModal } from "../ErrorModal/ErrorModal.js";
+
 import * as textService from "../../services/textService"
 
 const Edit = () => {
+    const {id} = useParams()
+
+    const [uptext, setupText] = useState({})
+
+    useEffect(() => {
+        textService.getById(id)
+        .then(result => setupText({
+      title: result.title,
+      language: result.language,
+      loot: result.loot,
+      time: result.time,
+      content: result.content,
+      imageUrl: result.imageUrl
+        }))
+    }, [id])
+
+
     const titleInputRef = useRef();
     const languageInputRef = useRef();
     const lootInputRef = useRef();
@@ -24,15 +42,6 @@ const Edit = () => {
   
     const navigate = useNavigate();
   
-    const [values, setValues] = useState({
-        title: '',
-        language: '',
-        loot: '',
-        time: '',
-        content: '',
-        imageUrl: ''
-    });
-  
     const [validation, setValid] = useState({
         title: "valid",
         language: "valid",
@@ -44,7 +53,7 @@ const Edit = () => {
   
     const [errorObj, setErrorObj] = useState({});
   
-    const emptyInputs = Object.values(values).some((v) => v == "");
+    console.log(Object.values(uptext));
   
     const onValidateInputs = (e) => {
       const inputName = e.target.name;
@@ -63,7 +72,7 @@ const Edit = () => {
     };
   
     const onInputChange = (e) => {
-      setValues((v) => {
+      setupText((v) => {
         return { ...v, [e.target.name]: e.target.value };
       });
     };
@@ -71,14 +80,14 @@ const Edit = () => {
     const onFormSubmit = async (e) => {
       e.preventDefault();
   
-     if (emptyInputs) {
+     if ((Object.values(uptext)).some((v) => v === "")) {
         setErrorObj({
           message: "Please fill all fields before creating an account!",
         });
       } else {
         try {
-          const updatedUser = await textService.update({...values, loot: Number(values.loot), time: Number(values.time)}) ;
-          navigate(`/details/${updatedUser._id}`);
+          const updatedUser = await textService.updateText(id, {...uptext, loot: Number(uptext.loot), time: Number(uptext.time)}) ;
+          navigate(`/details/${id}`);
         } catch (error) {
           setErrorObj(error);
         }
@@ -94,7 +103,7 @@ const Edit = () => {
             onSubmit={onFormSubmit}
             className="custom-form contact-form own-form"
           >
-            <h1 className="big-form-labels">Create new Text</h1>
+            <h1 className="big-form-labels">Update Text</h1>
             <div className="col-lg-6 col-md-6 col-12 center">
               <div className="form-floating">
                 <input
@@ -103,7 +112,7 @@ const Edit = () => {
                   id="title"
                   className="form-control"
                   placeholder="Title here:"
-                  value={values.title}
+                  value={uptext.title}
                   onChange={onInputChange}
                   ref={titleInputRef}
                   onBlur={onValidateInputs}
@@ -124,7 +133,7 @@ const Edit = () => {
                   id="imageUrl"
                   className="form-control"
                   placeholder="ImageUrl here:"
-                  value={values.imageUrl}
+                  value={uptext.imageUrl}
                   onChange={onInputChange}
                   ref={imageUrlInputRef}
                   onBlur={onValidateInputs}
@@ -144,7 +153,7 @@ const Edit = () => {
                   id="content"
                   className="form-control"
                   placeholder="Email address here:"
-                  value={values.content}
+                  value={uptext.content}
                   onChange={onInputChange}
                   ref={contentInputRef}
                   onBlur={onValidateInputs}
@@ -164,7 +173,7 @@ const Edit = () => {
                   id="language"
                   className="form-control"
                   placeholder="Language here:"
-                  value={values.languauge}
+                  value={uptext.language}
                   onChange={onInputChange}
                   ref={languageInputRef}
                   onBlur={onValidateInputs}
@@ -185,7 +194,7 @@ const Edit = () => {
                   id="time"
                   className="form-control"
                   placeholder="0"
-                  value={values.time}
+                  value={uptext.time}
                   onChange={onInputChange}
                   ref={timeInputRef}
                   onBlur={onValidateInputs}
@@ -206,7 +215,7 @@ const Edit = () => {
                   id="loot"
                   className="form-control"
                   placeholder="Loot here:"
-                  value={values.loot}
+                  value={uptext.loot}
                   onChange={onInputChange}
                   ref={lootInputRef}
                   onBlur={onValidateInputs}
@@ -221,7 +230,7 @@ const Edit = () => {
   
             <div className="col-lg-3 col-12 ms-auto center">
               <button type="submit" className="form-control">
-                Create
+                Edit
               </button>
             </div>
           </form>

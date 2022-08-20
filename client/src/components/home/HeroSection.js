@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import UserContext from "../../Contexts/Context"
+import UserContext from "../../Contexts/userContext"
 
 const HeroSection = () => {
     const {user} = useContext(UserContext)

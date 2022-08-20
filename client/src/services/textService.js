@@ -16,10 +16,22 @@ const createText = async (textData) => {
     return createdText
 }
 
+const updateText = async (id, textData) => {
+    const updatedText = await api.put('/data/catalog/' + id, textData)
+    return updatedText
+}
+
+const deleteText = async (id) => {
+    const updatedText = await api.del('/data/catalog/' + id)
+    return updatedText
+}
+
 
 
 export {
     getAllTexts,
     createText,
-    getById
+    getById,
+    updateText,
+    deleteText
 }

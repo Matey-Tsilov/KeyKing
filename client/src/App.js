@@ -12,35 +12,33 @@ import Create from "./components/Create/Create";
 import Edit from "./components/Edit/Edit";
 import Details from "./components/Details/Details";
 
-import UserContext from "./Contexts/Context.js";
+import UserContext from "./Contexts/userContext.js";
 import useSessionStorage from "./Hooks/useSessionStorage";
 
 function App() {
-  const [user, setUser] = useSessionStorage({})
+  const [user, setUser] = useSessionStorage({});
+
 
   return (
-    
     <div>
-      <UserContext.Provider value={{user, setUser}}>
-      <Preloader />
-      <Nav />
+      <UserContext.Provider value={{ user, setUser }}>
+        <Preloader />
+        <Nav />
 
+        <Routes>
+          <Route path="/" element={<HeroSection />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/quests" element={<Quests />} />
+            <Route path="/details/:id" element={<Details />} />
+            <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<HeroSection />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
 
-      <Routes>
-        <Route path="/" element={<HeroSection />}/>
-        <Route path="/create" element={<Create />}/>
-        <Route path="/quests" element={<Quests />}/>
-        <Route path="/details/:id" element={<Details />}/>    
-        <Route path="/edit/:id" element={<Edit />}/>        
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<HeroSection />} />
-        <Route path="*" element={<NotFound />}/>
-      </Routes>
-
-
-      <Footer />
-    </UserContext.Provider>
+        <Footer />
+      </UserContext.Provider>
     </div>
   );
 }
