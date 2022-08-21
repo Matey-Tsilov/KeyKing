@@ -75,11 +75,11 @@ const Nav = () => {
                     Create
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link to={"/my-profile"} className="nav-link click-scroll">
                     My Profile
                   </Link>
-                </li>
+                </li> */}
 
               </>
             ) : null}

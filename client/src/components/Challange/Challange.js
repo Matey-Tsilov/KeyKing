@@ -38,14 +38,14 @@ const Challange = () => {
     {done.withText && <WinModal id={passedText._id} error={{message: `You have won ${passedText.loot}!`}}></WinModal>}
     {done.timeRunOut && <WinModal id={passedText._id} error={{message: `Time run out! Try again.`}}></WinModal>}
     <div className="challange">
-      <div className="example">{passedText.content}</div>
+      <div className="example"><strong>{passedText.content}</strong></div>
       <div>
         Time remaining: {timeLeft} <i className="bi bi-clock"></i>
       </div>
       <form onSubmit={(e) => onDone(e)}>
         <textarea
           className={"challange-text"}
-          placeholder={passedText.content}
+          placeholder='Type text here'
           name="typer"
           id="typer"
           cols="30"
