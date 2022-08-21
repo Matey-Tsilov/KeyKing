@@ -1307,3 +1307,20 @@ margin-bottom: 10px;
 .footer-nav-right {
   padding-right: 40px;
 }
+
+.challange {
+  margin-left: 750px;
+  width: 60vw;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+textarea.challange-text:focus::placeholder {
+  color: grey;
+}
+
+.example {
+  font-size: larger;
+}

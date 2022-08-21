@@ -22,8 +22,8 @@ const updateText = async (id, textData) => {
 }
 
 const deleteText = async (id) => {
-    const updatedText = await api.del('/data/catalog/' + id)
-    return updatedText
+    const deletedText = await api.del('/data/catalog/' + id)
+    return deletedText
 }
 
 
