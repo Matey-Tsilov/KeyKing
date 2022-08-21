@@ -66,7 +66,7 @@ const Details = () => {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button className='footer-nav' variant='info' onClick={openChallange}>Take</Button>
+       {JSON.stringify(user) != '{}' && <Button className='footer-nav' variant='info' onClick={openChallange}>Take</Button>}
         <h5 className='footer-nav'>Prize: {text.loot} <i className="bi bi-coin"></i></h5>
         <h5 className='footer-nav'>Time: {text.time}sec <i className="bi bi-clock"></i></h5>
         <p className="space">&nbsp;&nbsp;&nbsp;</p>

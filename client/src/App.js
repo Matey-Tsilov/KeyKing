@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <UserContext.Provider value={{ user, setUser }}>
+      <UserContext.Provider value={{user, setUser}}>
         <TextContext.Provider value={{passedText, setPassedText}}>
 
         <Preloader />
