@@ -23,7 +23,7 @@ const HeroSection = () => {
                   
                                 {JSON.stringify(user) == '{}'
                                 ? <>
-                                <h2 className="mb-4">Do you want to type fast?</h2>
+                                <h2 className="mb-4">Do you want to type faster?</h2>
                                 <div>
                                 
                                 <p className="mb-4 login">
