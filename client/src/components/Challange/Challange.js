@@ -6,37 +6,12 @@ import { WinModal } from "./WinModal.js/WinModal";
 
 const Challange = () => {
   const { passedText, setPassedText } = useContext(TextContext);
+  const [timeLeft, setTimeLeft] = useState({ ...passedText }.time)
 
-  const [timeLeft, setTimeLeft] = useState({ ...passedText }.time);
-  const [done, setDone] = useState({withText: false, timeRunOut: false})
-
-  if (timeLeft > 0) {
-    setTimeout(() => {
-      setTimeLeft((r) => r - 1);
-    }, 1000);
-  }
-
-  const onDone = (e) => {
-    e.preventDefault()
-
-    
-    const formData = new FormData(e.target)
-    const text = formData.get('typer')
-
-    if (text === passedText.content) {
-        setDone({...done, withText: true})
-    }else if (timeLeft == 0) {
-        setDone({...done, timeRunOut: true})
-    }else {
-        setDone({...done, withText: false})
-    }
-  };
 
 
   return (
     <>
-    {done.withText && <WinModal id={passedText._id} error={{message: `You have won ${passedText.loot}!`}}></WinModal>}
-    {done.timeRunOut && <WinModal id={passedText._id} error={{message: `Time run out! Try again.`}}></WinModal>}
     <div className="challange">
       <div className="example"><strong>{passedText.content}</strong></div>
       <div>
@@ -63,7 +38,7 @@ const Challange = () => {
           <p className="space">&nbsp;&nbsp;&nbsp;</p>
           <p className="space">&nbsp;&nbsp;&nbsp;</p>
           <p className="space">&nbsp;&nbsp;&nbsp;</p>
-          <Button type="submit" variant="success">
+          <Button onClick={onDone} type="submit" variant="success">
             Done
           </Button>
         </div>
