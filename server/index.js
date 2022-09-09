@@ -17,5 +17,4 @@ app.use(cors())
 app.use(auth())
 app.use(router)//router
 
-
-app.listen(3030, () => console.log('App is listening on port: 3030'))
+app.listen(3030, () => console.log('App is listening on port: 3030')) 
