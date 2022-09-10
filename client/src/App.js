@@ -13,20 +13,15 @@ import Edit from "./components/Edit/Edit";
 import Details from "./components/Details/Details";
 import Challange from "./components/Challange/Challange";
 
-import UserContext from "./Contexts/userContext.js";
-import TextContext from "./Contexts/textContext.js";
-import useSessionStorage from "./Hooks/useSessionStorage";
-import { useState } from "react";
+import {UserContextProvider} from "./Contexts/userContext.js";
+import {TextContextProvider} from "./Contexts/textContext.js";
 
 function App() {
-  const [user, setUser] = useSessionStorage({});
-  const [passedText, setPassedText] = useState({})
 
   return (
     <div>
-      <UserContext.Provider value={{user, setUser}}>
-        <TextContext.Provider value={{passedText, setPassedText}}>
-
+      <UserContextProvider>
+       <TextContextProvider>
         <Preloader />
         <Nav />
 
@@ -44,8 +39,8 @@ function App() {
         </Routes>
 
         <Footer />
-        </TextContext.Provider>
-      </UserContext.Provider>
+        </TextContextProvider>
+      </UserContextProvider>
     </div>
   );
 }

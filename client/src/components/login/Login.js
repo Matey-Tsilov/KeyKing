@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorModal } from "../ErrorModal/ErrorModal.js";
 import * as api from "../../api/api.js";
-import UserContext from "../../Contexts/userContext.js";
+import {UserContext} from "../../Contexts/userContext.js";
 
 
 

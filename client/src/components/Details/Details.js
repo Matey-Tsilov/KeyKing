@@ -3,9 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import UserContext from '../../Contexts/userContext.js';
+import {UserContext} from '../../Contexts/userContext.js';
 import * as textService from '../../services/textService.js'
-import TextContext from '../../Contexts/textContext.js';
+import {TextContext} from '../../Contexts/textContext.js';
 
 
 
@@ -66,7 +66,7 @@ const Details = () => {
         </p>
       </Modal.Body>
       <Modal.Footer>
-       {JSON.stringify(user) != '{}' && <Button className='footer-nav' variant='info' onClick={openChallange}>Take</Button>}
+       {JSON.stringify(user) !== '{}' && <Button className='footer-nav' variant='info' onClick={openChallange}>Take</Button>}
         <h5 className='footer-nav'>Prize: {text.loot} <i className="bi bi-coin"></i></h5>
         <h5 className='footer-nav'>Time: {text.time}sec <i className="bi bi-clock"></i></h5>
         <p className="space">&nbsp;&nbsp;&nbsp;</p>
@@ -81,7 +81,7 @@ const Details = () => {
 
         <Button onClick={hideModal}>Close</Button>
 
-        { text._ownerId == user._id &&
+        { text._ownerId === user._id &&
             <>
             <Button className='footer-nav' variant='success' onClick={openEditView}>Edit</Button>
             <Button className='footer-nav' variant='danger' onClick={deleteText}>Delete</Button>

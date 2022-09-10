@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import UserContext from '../../Contexts/userContext.js';
+import {UserContext} from '../../Contexts/userContext.js';
 import { QuestCard } from './Card';
 import * as textService from '../../services/textService.js';
 

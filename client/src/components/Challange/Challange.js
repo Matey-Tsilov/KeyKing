@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 
-import TextContext from "../../Contexts/textContext";
+import {TextContext} from "../../Contexts/textContext";
 import { WinModal } from "./WinModal.js/WinModal";
 
 const Challange = () => {

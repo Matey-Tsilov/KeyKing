@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { VALID_PATHS } from "../../constants";
 import * as api from "../../api/api.js";
-import UserContext from "../../Contexts/userContext";
+import {UserContext} from "../../Contexts/userContext";
 
 const Nav = () => {
   const location = useLocation();
